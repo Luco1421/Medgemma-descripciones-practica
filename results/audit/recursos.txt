@@ -1,0 +1,83 @@
+1. CÓMPUTO
+Entrenamientos (carpetas con adapter_model.safetensors y run_config.json en experiments/*/*): 543
+  Método: glob experiments/*/*/run_config.json; tiempo = train_metrics.train_runtime de cada run_config.json.
+  chaksu_cot_v1: 3 entrenamientos, 3.47 h en total, 1.16 h de media
+  chaksu_json_v1: 270 entrenamientos, 203.51 h en total, 0.75 h de media
+  chaksu_prose_v1: 264 entrenamientos, 198.31 h en total, 0.75 h de media
+  chaksu_verbalize_img_v1: 3 entrenamientos, 2.75 h en total, 0.92 h de media
+  chaksu_verbalize_v1: 3 entrenamientos, 1.70 h en total, 0.57 h de media
+Tiempo de entrenamiento total: 409.74 h; media 0.75 h por entrenamiento (mín 0.57 h, máx 1.18 h)
+Jobs SLURM del proyecto con log en experiments/logs: 67 ids; 67 presentes en sacct desde 2026-08-01, todos en nukwa-long
+  Método: ids de los nombres de experiments/logs/*_<id>.out|err cruzados con sacct -X; los jobs sin log (humo, verificaciones, borrados) no se pueden separar de las líneas hermanas y no cuentan.
+  Estados: {'CANCELLED by 15219': 1, 'COMPLETED': 64, 'FAILED': 2}
+  Tiempo reservado de GPU (suma de Elapsed): 515.24 h; media 7.69 h por job
+    C_img: 1 jobs, 0.38 h
+    batch: 20 jobs, 461.80 h
+    bos: 1 jobs, 0.02 h
+    bos2_42: 1 jobs, 0.14 h
+    bos2_43: 1 jobs, 0.14 h
+    bos2_44: 1 jobs, 0.14 h
+    external: 5 jobs, 10.56 h
+    infer: 6 jobs, 1.84 h
+    jupyter: 1 jobs, 0.01 h
+    latency: 1 jobs, 0.19 h
+    lora: 1 jobs, 0.67 h
+    pipeline: 4 jobs, 2.15 h
+    pooling: 1 jobs, 1.18 h
+    prompts: 6 jobs, 6.90 h
+    prototipo: 3 jobs, 0.20 h
+    prototipo_ext: 2 jobs, 0.03 h
+    prototype: 1 jobs, 0.04 h
+    rgn: 3 jobs, 0.50 h
+    sorteos_len: 1 jobs, 3.96 h
+    sorteos_vis: 1 jobs, 3.22 h
+    surfC: 1 jobs, 0.02 h
+    surface: 1 jobs, 0.08 h
+    test: 4 jobs, 21.09 h
+  Nodos usados: nukwa-04.cnca, nukwa-05.cnca, nukwa-06.cnca, nukwa-07.cnca, nukwa-08.cnca, nukwa-09.cnca, nukwa-10.cnca (L40S de 46 GB en nukwa-05..10 según la configuración del clúster; el modelo de GPU no lo da sacct)
+  Elapsed de jobs que no son entrenamiento ni diagnóstico (inferencia, evaluación, métricas): 51.10 h
+  Los jobs 'batch' entrenan y evalúan, por lo que su Elapsed incluye también inferencia; no se puede separar sin medir cada fase.
+
+2. ALMACENAMIENTO (du -sb, bytes aparentes)
+experiments/ total: 27.89 GiB
+  experiments/chaksu_C: 0.01 GiB
+  experiments/chaksu_cot_v1: 0.55 GiB
+  experiments/chaksu_json_v1: 13.48 GiB
+  experiments/chaksu_prompts_A: 0.01 GiB
+  experiments/chaksu_prose_v1: 12.83 GiB
+  experiments/chaksu_verbalize_img_v1: 0.45 GiB
+  experiments/chaksu_verbalize_v1: 0.44 GiB
+  experiments/externas: 0.00 GiB
+  experiments/logs: 0.13 GiB
+  experiments/probe_634490.err: 0.00 GiB
+  experiments/probe_634490.out: 0.00 GiB
+Adaptadores guardados (adapter_model.safetensors): 543, total 7.56 GiB, media 14.2 MiB (mín 1.2, máx 147.0)
+Predicciones crudas (pred_*.jsonl): 2275 archivos, 0.32 GiB
+data/: 0.01 GiB
+results/: 0.88 GiB
+Activaciones de sondas (results/probes/*.npz): 2 archivos, 0.75 GiB
+Código: scripts/ 0.55 MiB, slurm/ 0.06 MiB, runs/ 0.08 MiB
+Repositorio versionado: archivos rastreados (git ls-files, du -cb) 10.29 MiB; git count-objects -vH:
+  count: 464
+  size: 17.30 MiB
+  in-pack: 9
+  packs: 1
+  size-pack: 4.11 KiB
+  prune-packable: 0
+  garbage: 0
+  size-garbage: 0 bytes
+Dataset Chákṣu (../datasets/chaksu/raw): 225.27 GiB
+Dataset MM-ODIR-129 (../datasets/mmodir129/raw): 0.78 GiB
+Pesos de MedGemma en HF_HUB_CACHE (/data/jperez/models/huggingface/hub/models--google--medgemma-1.5-4b-it): 8.05 GiB
+
+3. MEMORIA POR ADAPTADOR Y PROYECCIÓN
+Parámetros entrenables por adaptador: media 3.73 M (mín 0.32 M, máx 38.50 M; run_config.trainable_params), frente a 4338.58 M totales
+Bytes en disco por adaptador (media medida): 14.2 MiB; entrenamiento medio 0.75 h (run_config)
+Proyección = N adaptadores x media medida. Suposiciones: 88 ubicaciones, 3 semillas, mismo tamaño y tiempo medio por adaptador (sobreestima los de pocas capas, subestima all-linear).
+  configuración                                  adaptadores       disco  GPU-horas  días (4 jobs)
+  528 (88 ubicaciones x 3 semillas x 2 recetas)          528    7.35 GiB        398            4.2
+  1 tasa x 88 x 3 semillas                               264    3.67 GiB        199            2.1
+  3 tasas x 88 x 3 semillas                              792   11.02 GiB        598            6.2
+  5 tasas x 88 x 3 semillas                             1320   18.37 GiB        996           10.4
+  5 tasas x 88 x 3 semillas x 2 recetas                 2640   36.73 GiB       1992           20.8
+  'días (4 jobs)': GPU-horas / 4 jobs simultáneos (límite por usuario del clúster) / 24, sin inferencia ni colas.

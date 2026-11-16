@@ -1,0 +1,9 @@
+# Prompts del modelo base sobre MM-ODIR-129: PROMPT SPLITS PARTICION EJEMPLOS|- CONTROLES SALIDA; lanzar con TARGETS=data/targets/mmodir129__external.csv
+data/prompts/chaksu_A_P0.txt data/splits/mmodir129_externa.csv external - real,shuffled,blank experiments/chaksu_prompts_A/P0/external
+data/prompts/chaksu_A_P0b.txt data/splits/mmodir129_externa.csv external - real,shuffled,blank experiments/chaksu_prompts_A/P0b/external
+data/prompts/chaksu_A_P0c.txt data/splits/mmodir129_externa.csv external - real,shuffled,blank experiments/chaksu_prompts_A/P0c/external
+data/prompts/chaksu_A_P1.txt data/splits/mmodir129_externa.csv external - real,shuffled,blank experiments/chaksu_prompts_A/P1/external
+data/prompts/chaksu_A_P2.txt data/splits/mmodir129_externa.csv external - real,shuffled,blank experiments/chaksu_prompts_A/P2/external
+data/prompts/chaksu_A_P3.txt data/splits/mmodir129_externa.csv external - real,shuffled,blank experiments/chaksu_prompts_A/P3/external
+data/prompts/chaksu_A_P4.txt data/splits/mmodir129_externa.csv external - real,shuffled,blank experiments/chaksu_prompts_A/P4/external
+data/prompts/chaksu_A_P5.txt data/splits/mmodir129_externa.csv external data/prompts/chaksu_A_P5_shots.json real,shuffled,blank experiments/chaksu_prompts_A/P5/external

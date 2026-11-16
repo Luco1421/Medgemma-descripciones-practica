@@ -1,0 +1,69 @@
+MM-ODIR-129: 129 imágenes, 76 pacientes
+
+Etiqueta por partición publicada:
+published_split  test  train  validation
+label                                   
+Normal             12     36          12
+Pathological       14     41          14
+
+Partición publicada: pacientes con ojos en dos particiones (fuga por paciente)
+  test y train: 13
+  test y validation: 3
+  train y validation: 15
+
+Anotador por etiqueta, y palabras de la transcripción:
+label                                 Normal  Pathological
+doctor_name                                               
+Dr. Eduardo Anchia                         0             2
+Dr. Gabriel Alejandro Osorio Navarro      12            52
+Dra. Erika Quesada                         2            15
+Dra. Génesis Chen Li                      46             0
+  mediana de palabras: Anchia 17, Navarro 19, Quesada 26, Li 16
+
+Rasgos graduados y máscaras por etiqueta (la presencia de anotación estructurada
+predice la etiqueta):
+rasgos       False True       
+máscaras     False False True 
+label                         
+Normal          59     1     0
+Pathological     0     0    69
+
+Coherencia entre las fuentes de anotación del dataset:
+  `annotations.json` y `split.json` difieren en `locs_data` de 1 imagen(es): ['1265_right.jpg']
+    1265_right.jpg (Normal): annotations.json={} | split.json={'conditions': [], 'glaucoma': {'cup_to_disc_ratio': 0, 'neuroretinal_rim': 0, 'disc_hemorrhage': 0, 'peripapillary_atrophy': 2, 'rnfl_defect': 1, 'disc_pallor': 0, 'vessel_changes': 0}}
+  `metadata.jsonl` frente al manifest: 0 discrepancias
+
+Imágenes:
+  formatos {'JPEG': 129}; tamaños distintos 32; ancho 800–3888, alto 600–3456
+  AUC contra Pathological usando SOLO width: 0.564 (n=129)
+  AUC contra Pathological usando SOLO height: 0.562 (n=129)
+  AUC contra Pathological usando SOLO bytes: 0.450 (n=129)
+
+Máscaras (69 imágenes):
+  PNG igual a NPY: 69 de 69
+  copa contenida en el disco: mediana 1.000, 2 casos por debajo de 0.95
+  área del disco: 18859–251019 px (factor 13.3×)
+
+Grado de CDR anotado frente al vCDR de las máscaras (n=69):
+  vCDR bounding-box
+    grado 1  README 0.4-0.5    n=1   medido: mediana 0.81 [0.81-0.81]
+    grado 2  README 0.6-0.7    n=23  medido: mediana 0.60 [0.43-0.80]
+    grado 3  README 0.8-0.9    n=38  medido: mediana 0.72 [0.54-0.95]
+    grado 4  README 1.0-1.0    n=7   medido: mediana 0.77 [0.53-0.98]
+  vCDR por centroide
+    grado 1  README 0.4-0.5    n=1   medido: mediana 0.75 [0.75-0.75]
+    grado 2  README 0.6-0.7    n=23  medido: mediana 0.62 [0.39-0.82]
+    grado 3  README 0.8-0.9    n=38  medido: mediana 0.71 [0.50-0.99]
+    grado 4  README 1.0-1.0    n=7   medido: mediana 0.65 [0.55-0.92]
+  Spearman entre grado y vCDR:
+    bounding box         +0.269 (n=69)   sin grados de un solo caso: +0.321 (n=68)
+    centroide            +0.263 (n=69)   sin grados de un solo caso: +0.299 (n=68)
+    cociente de áreas    +0.238 (n=69)   sin grados de un solo caso: +0.280 (n=68)
+
+CDR escrito en la transcripción: 100 de 129 imágenes
+  por label: Normal 57/60 (media 0.39); Pathological 43/69 (media 0.80)
+  por doctor_name: Dr. Eduardo Anchia 0/2 (media nan); Dr. Gabriel Alejandro Osorio Navarro 49/64 (media 0.71); Dra. Erika Quesada 5/17 (media 0.74); Dra. Génesis Chen Li 46/46 (media 0.40)
+  frente al vCDR de las máscaras (solo patológicas con número escrito, n=43):
+    bounding box   Spearman +0.419, error absoluto medio 0.140
+    centroide      Spearman +0.440, error absoluto medio 0.134
+  frente al grado anotado (n=43): Spearman +0.854

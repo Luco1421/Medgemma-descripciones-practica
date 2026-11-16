@@ -1,0 +1,7 @@
+# Prompting del modelo base: PROMPT SPLITS PARTICION EJEMPLOS|- CONTROLES SALIDA
+data/prompts/chaksu_A_P0b.txt data/splits/chaksu_seed42_seleccion.csv selection - real experiments/chaksu_prompts_A/P0b/selection
+data/prompts/chaksu_A_P0b.txt data/splits/chaksu_seed42_seleccion.csv validation - real,shuffled,blank experiments/chaksu_prompts_A/P0b/validation
+data/prompts/chaksu_A_P0c.txt data/splits/chaksu_seed42_seleccion.csv selection - real experiments/chaksu_prompts_A/P0c/selection
+data/prompts/chaksu_A_P0c.txt data/splits/chaksu_seed42_seleccion.csv validation - real,shuffled,blank experiments/chaksu_prompts_A/P0c/validation
+data/prompts/chaksu_A_P1.txt data/splits/chaksu_seed42_seleccion.csv selection - real experiments/chaksu_prompts_A/P1/selection
+data/prompts/chaksu_A_P1.txt data/splits/chaksu_seed42_seleccion.csv validation - real,shuffled,blank experiments/chaksu_prompts_A/P1/validation

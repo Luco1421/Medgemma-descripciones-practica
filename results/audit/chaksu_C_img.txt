@@ -1,0 +1,12 @@
+Etapa 2 con imagen, etapa 1 = all-linear de A, semillas [42, 43, 44]; imagen real en la etapa 1 y en la 2; constante 0.5200
+
+=== Etapa 2 base
+  (i) fidelidad a los campos de entrada, por semilla: con imagen [0.9181, 0.9006, 0.8947], solo texto [1.0, 1.0, 1.0] (criterio ≥ 0.99)
+  (ii) error del vCDR: con imagen 0.0403, solo texto 0.0403; con imagen − solo texto +0.0000 [+0.0000, +0.0000] (criterio: IC dentro de ±0.004)
+  (iii) decisiones que la etapa 2 cambia respecto de la etapa 1: 49 de 513; de ellas coinciden con la referencia 0
+        textos sin vCDR legible: 0; hallazgos fuera de los campos: 5 de 513
+=== Etapa 2 lora
+  (i) fidelidad a los campos de entrada, por semilla: con imagen [1.0, 1.0, 1.0], solo texto [1.0, 1.0, 1.0] (criterio ≥ 0.99)
+  (ii) error del vCDR: con imagen 0.0403, solo texto 0.0403; con imagen − solo texto +0.0000 [+0.0000, +0.0000] (criterio: IC dentro de ±0.004)
+  (iii) decisiones que la etapa 2 cambia respecto de la etapa 1: 0 de 513; de ellas coinciden con la referencia 0
+        textos sin vCDR legible: 0; hallazgos fuera de los campos: 0 de 513

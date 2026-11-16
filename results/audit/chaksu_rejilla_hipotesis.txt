@@ -1,0 +1,41 @@
+Criterios de las hipótesis H1–H7 sobre las rejillas (diferencia relevante 0.004). Error del vCDR, media de tres semillas.
+
+=== A (json_v1): constante 0.0567, base 0.0615, all-linear 0.0403
+H1  bloque − control aleatorio de igual presupuesto
+    vision   -0.0006 [-0.0031, +0.0022]   no se cumple
+    language -0.0007 [-0.0032, +0.0018]   no se cumple
+H2  vision: tercio medio frente al temprano y al tardío
+    medio − early -0.0009 [-0.0033, +0.0012]
+    medio − late  -0.0045 [-0.0080, -0.0009]
+H3  language: tercio medio frente al temprano y al tardío
+    medio − early -0.0006 [-0.0037, +0.0025]
+    medio − late  -0.0008 [-0.0024, +0.0007]
+H4  mejor capa suelta frente a all-linear (elegida entre las de su torre: sesgo de selección)
+    vision   block_vision_layer11    +0.0011 [-0.0019, +0.0043]   se cumple
+    language block_language_layer01  -0.0009 [-0.0039, +0.0024]   se cumple
+H5  89 celdas (con el base): real < barajada 87, barajada ≤ blanco 44, las dos 43
+=== B (prose_v1): constante 0.0567, base 0.1913, all-linear 0.0405
+H1  bloque − control aleatorio de igual presupuesto
+    vision   +0.0132 [+0.0101, +0.0167]   no se cumple
+    language -0.0005 [-0.0027, +0.0018]   no se cumple
+H2  vision: tercio medio frente al temprano y al tardío
+    medio − early -0.0198 [-0.0253, -0.0147]
+    medio − late  -0.0128 [-0.0156, -0.0102]
+H3  language: tercio medio frente al temprano y al tardío
+    medio − early +0.0010 [-0.0019, +0.0039]
+    medio − late  -0.0019 [-0.0036, -0.0002]
+H4  mejor capa suelta frente a all-linear (elegida entre las de su torre: sesgo de selección)
+    vision   block_vision_layer12    +0.0207 [+0.0116, +0.0325]   no se cumple
+    language block_language_layer00  +0.0008 [-0.0019, +0.0034]   se cumple
+H5  89 celdas (con el base): real < barajada 81, barajada ≤ blanco 74, las dos 67
+
+H6  Spearman entre A y B sobre 90 filas (con base y constante) +0.737; sobre las 88 celdas +0.734
+    capas sueltas de vision: +0.767
+    capas sueltas de language: +0.722
+
+H7  Spearman entre el predictor de cada capa y el error de su celda de una sola capa (más negativo = mejor para la sonda y Auto-RGN)
+    profundidad: el signo esperado es positivo (más profundo, más error); la sonda de la capa k es la salida del bloque k
+    A vision   n=27: profundidad -0.330, sonda vision -0.567, RGN block +0.399, RGN attention +0.330, RGN mlp +0.577
+    A language n=34: profundidad +0.855, sonda image_tokens -0.337, sonda last_token +0.158, RGN block -0.041, RGN attention +0.266, RGN mlp -0.076
+    B vision   n=27: profundidad -0.452, sonda vision -0.571, RGN block +0.464, RGN attention +0.396, RGN mlp +0.469
+    B language n=34: profundidad +0.781, sonda image_tokens -0.180, sonda last_token -0.011, RGN block -0.112, RGN attention +0.026, RGN mlp -0.199

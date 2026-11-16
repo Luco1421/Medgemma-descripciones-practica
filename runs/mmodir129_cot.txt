@@ -1,0 +1,5 @@
+# Cadena de razonamiento sobre MM-ODIR-129 (RECETA CARPETA); lanzar con MAX_NEW_TOKENS=512
+cot_v1 experiments/chaksu_cot_v1/base
+cot_v1 experiments/chaksu_cot_v1/all-linear_s42
+cot_v1 experiments/chaksu_cot_v1/all-linear_s43
+cot_v1 experiments/chaksu_cot_v1/all-linear_s44

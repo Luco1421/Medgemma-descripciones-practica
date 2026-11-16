@@ -1,0 +1,24 @@
+Configuración C, etapa 1 = all-linear de A, semillas [42, 43, 44]; 171 imágenes de validación; constante 0.5200
+
+Referencias, error del vCDR con la imagen correcta: A 0.0403, B 0.0405 (media de las semillas)
+
+=== Etapa 2: base
+  1 contenido  error del vCDR (real) por semilla [np.float64(0.0402), np.float64(0.0402), np.float64(0.0405)], media 0.0403
+               C − A +0.0000 [+0.0000, +0.0000]   (criterio: IC dentro de ±0.004)
+               C − B -0.0002 [-0.0019, +0.0016]
+  2 fidelidad  mínima de las 9 combinaciones 1.0000 (criterio ≥ 0.99); textos sin vCDR legible: 0
+  3 hallazgos fuera de los campos: 0 de 1539 textos
+  4 controles  ganancia sobre la barajada +0.0324 (A +0.0324), sobre el blanco +0.0426 (A +0.0426)
+    sensibilidad / especificidad (real, media de semillas): 0.507 / 0.941  (A 0.507 / 0.941)
+  6 estrés     decisión invertida copiada en 167/171 textos (0.977; criterio ≥ 0.99 en el LoRA); fidelidad completa 0.977
+
+=== Etapa 2: lora
+  1 contenido  error del vCDR (real) por semilla [np.float64(0.0402), np.float64(0.0402), np.float64(0.0405)], media 0.0403
+               C − A +0.0000 [+0.0000, +0.0000]   (criterio: IC dentro de ±0.004)
+               C − B -0.0002 [-0.0019, +0.0016]
+  2 fidelidad  mínima de las 9 combinaciones 1.0000 (criterio ≥ 0.99); textos sin vCDR legible: 0
+  3 hallazgos fuera de los campos: 0 de 1539 textos
+  4 controles  ganancia sobre la barajada +0.0324 (A +0.0324), sobre el blanco +0.0426 (A +0.0426)
+    sensibilidad / especificidad (real, media de semillas): 0.507 / 0.941  (A 0.507 / 0.941)
+  6 estrés     decisión invertida copiada en 513/513 textos (1.000; criterio ≥ 0.99 en el LoRA); fidelidad completa 1.000
+

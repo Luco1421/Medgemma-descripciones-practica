@@ -1,0 +1,48 @@
+Latencia de inferencia por imagen. GPU NVIDIA L40S, bf16, decodificación voraz, max_new_tokens 128.
+40 imágenes de validación de Chákṣu (primeras de data/splits/chaksu_seed42.csv), 3 de calentamiento descartadas, 2 pasada(s). Adaptadores all-linear semilla 42 (A, B) y experiments/chaksu_verbalize_v1/block_language_s42.
+Total = carga + preprocesado + generación + cambio de adaptador y lectura de campos (C). ms por imagen.
+
+=== Pasada 1
+configuración                          media±desv  mediana      p95  tokens  pico GiB
+A all-linear (imagen -> JSON)        1182±   153     1125     1404    27.9      8.65
+B all-linear (imagen -> prosa)       1171±    95     1150     1334    31.6      8.65
+C, redactor LoRA                     2079±   203     1969     2353    59.0      8.65
+C, redactor base                     2004±    45     1995     2124    72.3      8.65
+base sin adaptar, prompt de A         955±    15      950      974    39.0      8.53
+
+Desglose medio (ms): carga imagen | preprocesado | generación | cambio+lectura | etapa 1 | etapa 2
+A all-linear (imagen -> JSON)       124.4 |     38.9 |   1018.7 |      0.0 |   1182.0 |      0.0
+B all-linear (imagen -> prosa)       30.0 |     32.0 |   1109.2 |      0.0 |   1171.3 |      0.0
+C, redactor LoRA                     30.4 |     32.6 |   2000.5 |     15.7 |   1050.7 |   1012.8
+C, redactor base                     30.3 |     32.8 |   1940.5 |      0.0 |   1048.3 |    955.2
+base sin adaptar, prompt de A        30.3 |     32.4 |    892.7 |      0.0 |    955.4 |      0.0
+
+razón C_lora/B: 1.78
+razón C_lora/A: 1.76
+razón B/A: 0.99
+razón C_base/B: 1.71
+razón C_base/A: 1.70
+razón A/base: 1.24
+
+=== Pasada 2
+configuración                          media±desv  mediana      p95  tokens  pico GiB
+A all-linear (imagen -> JSON)        1088±   153     1031     1466    27.9      8.65
+B all-linear (imagen -> prosa)       1162±    91     1148     1314    31.6      8.65
+C, redactor LoRA                     2062±   205     1954     2330    59.0      8.65
+C, redactor base                     1987±    40     1981     2026    72.3      8.65
+base sin adaptar, prompt de A         953±    16      943      974    39.0      8.53
+
+Desglose medio (ms): carga imagen | preprocesado | generación | cambio+lectura | etapa 1 | etapa 2
+A all-linear (imagen -> JSON)        31.6 |     33.8 |   1022.4 |      0.0 |   1087.7 |      0.0
+B all-linear (imagen -> prosa)       30.1 |     32.4 |   1099.1 |      0.0 |   1161.7 |      0.0
+C, redactor LoRA                     30.2 |     33.0 |   1983.2 |     15.5 |   1045.4 |   1001.0
+C, redactor base                     30.2 |     32.7 |   1924.2 |      0.0 |   1041.5 |    945.5
+base sin adaptar, prompt de A        30.2 |     31.9 |    891.0 |      0.0 |    953.1 |      0.0
+
+razón C_lora/B: 1.77
+razón C_lora/A: 1.90
+razón B/A: 1.07
+razón C_base/B: 1.71
+razón C_base/A: 1.83
+razón A/base: 1.14
+

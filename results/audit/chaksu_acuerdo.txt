@@ -1,0 +1,38 @@
+Acuerdo entre los cinco expertos de chaksu, por campo (ICC con intervalo por bloques de captura)
+
+campo       subconjunto     n     ICC  IC 95 %                MAE  sd imágenes   ruido
+Disc Area   Bosch        145   0.827  [0.712, 0.910]  1742.487     5692.350    0.31
+Disc Area   Forus        126   0.931  [0.911, 0.943]  2639.045    11047.114    0.24
+Disc Area   Remidio     1074   0.911  [0.878, 0.931]  6444.039    26751.293    0.24
+Cup Area    Bosch        145   0.615  [0.522, 0.685]  2528.545     3743.462    0.68
+Cup Area    Forus        126   0.752  [0.634, 0.831]  4502.847     9206.276    0.49
+Cup Area    Remidio     1074   0.769  [0.720, 0.815]  8262.401    17783.937    0.46
+Rim Area    Bosch        145   0.440  [0.348, 0.520]  3177.064     3394.193    0.94
+Rim Area    Forus        126   0.546  [0.455, 0.611]  5253.750     6638.040    0.79
+Rim Area    Remidio     1074   0.624  [0.575, 0.664]  9571.133    15957.173    0.60
+Cup Height  Bosch        145   0.608  [0.486, 0.698]    13.886       20.272    0.68
+Cup Height  Forus        126   0.755  [0.666, 0.820]    17.383       35.078    0.50
+Cup Height  Remidio     1074   0.748  [0.710, 0.785]    22.567       46.395    0.49
+Cup Width   Bosch        145   0.568  [0.465, 0.648]    15.666       21.333    0.73
+Cup Width   Forus        126   0.630  [0.537, 0.694]    20.162       31.831    0.63
+Cup Width   Remidio     1074   0.654  [0.610, 0.697]    27.635       44.866    0.62
+Disc Height Bosch        145   0.758  [0.618, 0.850]     7.432       18.940    0.39
+Disc Height Forus        126   0.881  [0.863, 0.891]     8.391       26.003    0.32
+Disc Height Remidio     1074   0.848  [0.777, 0.895]    13.130       42.611    0.31
+Disc Width  Bosch        145   0.820  [0.689, 0.907]     5.781       18.577    0.31
+Disc Width  Forus        126   0.918  [0.891, 0.936]     6.163       23.333    0.26
+Disc Width  Remidio     1074   0.876  [0.822, 0.912]    10.834       40.034    0.27
+ACDR        todas       1345   0.519  [0.477, 0.560]     0.058        0.077    0.75
+ACDR        Bosch        145   0.401  [0.313, 0.474]     0.070        0.071    0.99
+ACDR        Forus        126   0.590  [0.465, 0.682]     0.059        0.086    0.68
+ACDR        Remidio     1074   0.526  [0.474, 0.572]     0.057        0.077    0.74
+VCDR        todas       1344   0.526  [0.484, 0.568]     0.055        0.073    0.76
+VCDR        Bosch        145   0.398  [0.311, 0.476]     0.065        0.065    1.00
+VCDR        Forus        126   0.612  [0.497, 0.696]     0.055        0.082    0.67
+VCDR        Remidio     1073   0.532  [0.481, 0.575]     0.054        0.072    0.74
+HCDR        todas       1344   0.413  [0.382, 0.443]     0.068        0.074    0.93
+HCDR        Bosch        145   0.345  [0.251, 0.415]     0.077        0.070    1.09
+HCDR        Forus        126   0.437  [0.343, 0.514]     0.069        0.081    0.86
+HCDR        Remidio     1073   0.419  [0.384, 0.453]     0.067        0.073    0.92
+
+Decisión (NORMAL / GLAUCOMA SUSPECT), kappa de Fleiss sobre 1345 imágenes: 0.360

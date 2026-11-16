@@ -1,0 +1,12 @@
+# Sorteos adicionales del control aleatorio (receta A, semilla 42). Las líneas 1-6 son las corridas nuevas; las demás ya existen y entran en la tabla.
+chaksu json_v1 random:block_vision@1 42
+chaksu json_v1 random:block_vision@2 42
+chaksu json_v1 random:block_vision@3 42
+chaksu json_v1 random:block_language@1 42
+chaksu json_v1 random:block_language@2 42
+chaksu json_v1 random:block_language@3 42
+chaksu json_v1 all-linear 42
+chaksu json_v1 block_vision 42
+chaksu json_v1 block_language 42
+chaksu json_v1 random:block_vision 42
+chaksu json_v1 random:block_language 42

@@ -1,0 +1,30 @@
+META-EVALUACIÓN (171 referencias de validación; media por condición; todos los textos leídos con fields.py)
+condición                                                   BLEU-4                 ROUGE-L       BERTScore-roberta  BERTScore-ClinicalBERT             SBERT-mpnet                  MedCPT
+misma frase                                                100.000                   1.000                   1.000                   1.000                   1.000                   1.000
+otra formulación, contenido correcto                        29.298                   0.644                   0.928                   0.822                   0.824                   0.902
+misma frase, vCDR ±0.10                                     84.842                   0.945                   0.996                   0.994                   0.999                   1.000
+otra formulación, vCDR ±0.10                                26.835                   0.594                   0.924                   0.821                   0.824                   0.902
+misma frase, vCDR ±0.20                                     84.842                   0.945                   0.995                   0.991                   0.999                   0.999
+otra formulación, vCDR ±0.20                                26.046                   0.599                   0.924                   0.819                   0.823                   0.905
+misma frase, decisión contraria                             78.671                   0.895                   0.969                   0.944                   0.893                   0.950
+frase de otra imagen                                        21.260                   0.522                   0.918                   0.805                   0.804                   0.893
+
+Fracción de imágenes en que la métrica puntúa MÁS al texto con el contenido equivocado y la misma forma
+que al texto con el contenido correcto y otra formulación (una métrica que mide contenido daría 0):
+  misma frase, vCDR ±0.10                                     0.98                    0.98                    0.98                    1.00                    1.00                    0.99
+  misma frase, vCDR ±0.20                                     0.98                    0.98                    0.98                    1.00                    1.00                    0.99
+  misma frase, decisión contraria                             0.98                    0.95                    0.92                    0.94                    0.73                    0.75
+
+REJILLA prose_v1: 89 filas (base y 88 celdas, media de 3 semillas); escrita en experiments/chaksu_prose_v1/surface.csv
+Spearman entre la métrica de cada celda y su error del vCDR (más negativo = la métrica ordena como el error):
+  BLEU-4                  -0.706   sin el base -0.695
+  ROUGE-L                 -0.726   sin el base -0.716
+  BERTScore-roberta       -0.618   sin el base -0.605
+  BERTScore-ClinicalBERT  -0.775   sin el base -0.767
+  SBERT-mpnet             -0.618   sin el base -0.609
+  MedCPT                  -0.308   sin el base -0.290
+
+Celdas de referencia:
+      cell  BLEU-4  ROUGE-L  BERTScore-roberta  BERTScore-ClinicalBERT  SBERT-mpnet  MedCPT
+      base   4.283    0.359              0.900                   0.721        0.770   0.889
+all-linear  23.776    0.550              0.923                   0.815        0.817   0.903

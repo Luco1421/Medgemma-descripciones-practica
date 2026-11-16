@@ -1,0 +1,19 @@
+# Etapa 2 de C sobre MM-ODIR-129: TARGETS ADAPTER SALIDA; lanzar con SPLITS=data/splits/mmodir129_externa.csv SPLIT=external
+data/pipeline/mmodir129_C_all-linear_s42_real.csv base experiments/chaksu_C/ext_base_all-linear_s42_real
+data/pipeline/mmodir129_C_all-linear_s42_real.csv experiments/chaksu_verbalize_v1/block_language_s42 experiments/chaksu_C/ext_lora_all-linear_s42_real
+data/pipeline/mmodir129_C_all-linear_s42_shuffled.csv base experiments/chaksu_C/ext_base_all-linear_s42_shuffled
+data/pipeline/mmodir129_C_all-linear_s42_shuffled.csv experiments/chaksu_verbalize_v1/block_language_s42 experiments/chaksu_C/ext_lora_all-linear_s42_shuffled
+data/pipeline/mmodir129_C_all-linear_s42_blank.csv base experiments/chaksu_C/ext_base_all-linear_s42_blank
+data/pipeline/mmodir129_C_all-linear_s42_blank.csv experiments/chaksu_verbalize_v1/block_language_s42 experiments/chaksu_C/ext_lora_all-linear_s42_blank
+data/pipeline/mmodir129_C_all-linear_s43_real.csv base experiments/chaksu_C/ext_base_all-linear_s43_real
+data/pipeline/mmodir129_C_all-linear_s43_real.csv experiments/chaksu_verbalize_v1/block_language_s43 experiments/chaksu_C/ext_lora_all-linear_s43_real
+data/pipeline/mmodir129_C_all-linear_s43_shuffled.csv base experiments/chaksu_C/ext_base_all-linear_s43_shuffled
+data/pipeline/mmodir129_C_all-linear_s43_shuffled.csv experiments/chaksu_verbalize_v1/block_language_s43 experiments/chaksu_C/ext_lora_all-linear_s43_shuffled
+data/pipeline/mmodir129_C_all-linear_s43_blank.csv base experiments/chaksu_C/ext_base_all-linear_s43_blank
+data/pipeline/mmodir129_C_all-linear_s43_blank.csv experiments/chaksu_verbalize_v1/block_language_s43 experiments/chaksu_C/ext_lora_all-linear_s43_blank
+data/pipeline/mmodir129_C_all-linear_s44_real.csv base experiments/chaksu_C/ext_base_all-linear_s44_real
+data/pipeline/mmodir129_C_all-linear_s44_real.csv experiments/chaksu_verbalize_v1/block_language_s44 experiments/chaksu_C/ext_lora_all-linear_s44_real
+data/pipeline/mmodir129_C_all-linear_s44_shuffled.csv base experiments/chaksu_C/ext_base_all-linear_s44_shuffled
+data/pipeline/mmodir129_C_all-linear_s44_shuffled.csv experiments/chaksu_verbalize_v1/block_language_s44 experiments/chaksu_C/ext_lora_all-linear_s44_shuffled
+data/pipeline/mmodir129_C_all-linear_s44_blank.csv base experiments/chaksu_C/ext_base_all-linear_s44_blank
+data/pipeline/mmodir129_C_all-linear_s44_blank.csv experiments/chaksu_verbalize_v1/block_language_s44 experiments/chaksu_C/ext_lora_all-linear_s44_blank

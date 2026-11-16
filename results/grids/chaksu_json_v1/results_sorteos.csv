@@ -1,0 +1,14 @@
+cell,tower,depth,module,trainable_params,train_loss_mean,vcdr_error_s42,vcdr_error_mean,vcdr_error_sd,vcdr_spearman_s42,vcdr_spearman_mean,vcdr_spearman_sd,sensitivity_s42,sensitivity_mean,sensitivity_sd,specificity_s42,specificity_mean,specificity_sd,format_s42,format_mean,format_sd,image_gain_s42,image_gain_mean,image_gain_sd,blank_gain_s42,blank_gain_mean,blank_gain_sd,diff_vs_ref,diff_ci_low,diff_ci_high
+random_block_vision_1,both,all,random,8692224,0.2031,0.0394,0.0394,nan,0.7278,0.7278,nan,0.6957,0.6957,nan,0.9257,0.9257,nan,1.0000,1.0000,nan,0.0348,0.0348,nan,0.0435,0.0435,nan,-0.0008,-0.0036,0.0018
+random_block_vision_2,both,all,random,8666112,0.2024,0.0398,0.0398,nan,0.7296,0.7296,nan,0.6522,0.6522,nan,0.9189,0.9189,nan,1.0000,1.0000,nan,0.0363,0.0363,nan,0.0431,0.0431,nan,-0.0004,-0.0036,0.0028
+random_block_vision_3,both,all,random,8660224,0.2025,0.0386,0.0386,nan,0.7425,0.7425,nan,0.6522,0.6522,nan,0.9257,0.9257,nan,1.0000,1.0000,nan,0.0375,0.0375,nan,0.0442,0.0442,nan,-0.0015,-0.0042,0.0011
+random_block_language_1,both,all,random,29801728,0.1981,0.0398,0.0398,nan,0.7414,0.7414,nan,0.4783,0.4783,nan,0.9459,0.9459,nan,1.0000,1.0000,nan,0.0325,0.0325,nan,0.4847,0.4847,nan,-0.0004,-0.0015,0.0005
+random_block_language_2,both,all,random,29769216,0.1979,0.0398,0.0398,nan,0.7310,0.7310,nan,0.5217,0.5217,nan,0.9392,0.9392,nan,1.0000,1.0000,nan,0.0342,0.0342,nan,0.4847,0.4847,nan,-0.0004,-0.0015,0.0008
+random_block_language_3,both,all,random,29796096,0.1981,0.0407,0.0407,nan,0.7297,0.7297,nan,0.4348,0.4348,nan,0.9459,0.9459,nan,1.0000,1.0000,nan,0.0324,0.0324,nan,0.0422,0.0422,nan,0.0005,-0.0010,0.0019
+all-linear,both,all,all-linear,38497792,0.1970,0.0402,0.0402,nan,0.7358,0.7358,nan,0.4348,0.4348,nan,0.9459,0.9459,nan,1.0000,1.0000,nan,0.0320,0.0320,nan,0.0427,0.0427,nan,,,
+block_vision,vision,all,block,8695296,0.2281,0.0399,0.0399,nan,0.7373,0.7373,nan,0.2609,0.2609,nan,0.9595,0.9595,nan,1.0000,1.0000,nan,0.0302,0.0302,nan,0.0195,0.0195,nan,-0.0003,-0.0038,0.0032
+block_language,language,all,block,29802496,0.2016,0.0397,0.0397,nan,0.7237,0.7237,nan,0.4783,0.4783,nan,0.9392,0.9392,nan,1.0000,1.0000,nan,0.0333,0.0333,nan,0.0432,0.0432,nan,-0.0005,-0.0037,0.0026
+random_block_vision,both,all,random,8688384,0.2028,0.0400,0.0400,nan,0.7314,0.7314,nan,0.6087,0.6087,nan,0.9324,0.9324,nan,1.0000,1.0000,nan,0.0357,0.0357,nan,0.0429,0.0429,nan,-0.0002,-0.0027,0.0024
+random_block_language,both,all,random,29794816,0.1981,0.0409,0.0409,nan,0.7315,0.7315,nan,0.4348,0.4348,nan,0.9459,0.9459,nan,1.0000,1.0000,nan,0.0308,0.0308,nan,0.0419,0.0419,nan,0.0008,-0.0007,0.0022
+base,none,none,none,0,,,0.0615,,,0.1349,,,0.0000,,,1.0000,,,1.0000,,,-0.0005,,,-0.0022,,0.0213,0.0141,0.0290
+constant,none,none,none,0,,,0.0567,,,,,,,,,,,,,,,,,,,,0.0165,0.0097,0.0235

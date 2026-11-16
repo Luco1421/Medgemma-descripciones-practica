@@ -1,0 +1,241 @@
+====================================================================================================
+RECETA A (json_v1). all-linear: 38,497,792 parámetros, 4085 s, 147.0 MiB; error de validación 0.0403 (constante 0.0567), Test 0.0379 (constante 0.0584)
+
+(1) Ubicaciones con <= 10% de los parámetros de all-linear (73), ordenadas por error de validación; diff = ubicación - all-linear con IC por bloques de captura; kept = fracción de la mejora conservada
+
+                          pct_params  pct_time  adapter_mib  val_error                   val_diff val_kept val_extra_rel  test_error                  test_diff test_kept test_extra_rel
+cell                                                                                                                                                                                    
+block_vision_mid                 7.5      69.9         11.1     0.0387  -0.0016 [-0.0047,+0.0017]     110%           -4%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_language_layer01           2.3      61.5          3.3     0.0394  -0.0009 [-0.0039,+0.0024]     105%           -2%      0.0410  +0.0031 [-0.0002,+0.0059]       85%             8%
+block_vision_early               7.5      73.8         11.1     0.0396  -0.0007 [-0.0034,+0.0023]     104%           -2%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_language_layer05           2.3      61.6          3.3     0.0397  -0.0006 [-0.0033,+0.0020]     104%           -1%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_language_layer00           2.3      61.3          3.3     0.0400  -0.0003 [-0.0030,+0.0026]     102%           -1%      0.0416  +0.0037 [+0.0007,+0.0065]       82%            10%
+attention_language_mid           8.2      65.2         12.0     0.0405  +0.0002 [-0.0024,+0.0024]      99%            0%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_language_layer18           2.3      61.3          3.3     0.0405  +0.0002 [-0.0024,+0.0029]      99%            0%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_language_layer03           2.3      61.6          3.3     0.0407  +0.0004 [-0.0026,+0.0035]      98%            1%         NaN           +nan [+nan,+nan]      nan%           nan%
+attention_vision_mid             3.4      68.1          5.1     0.0407  +0.0004 [-0.0023,+0.0034]      98%            1%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_language_layer02           2.3      61.0          3.3     0.0408  +0.0005 [-0.0028,+0.0040]      97%            1%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_language_layer13           2.3      61.6          3.3     0.0408  +0.0005 [-0.0018,+0.0027]      97%            1%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_language_layer06           2.3      61.5          3.3     0.0409  +0.0006 [-0.0022,+0.0035]      96%            1%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_language_layer07           2.3      61.5          3.3     0.0409  +0.0006 [-0.0019,+0.0031]      96%            1%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_language_layer04           2.3      61.6          3.3     0.0410  +0.0008 [-0.0027,+0.0048]      96%            2%         NaN           +nan [+nan,+nan]      nan%           nan%
+attention_language_early         7.5      64.7         11.0     0.0411  +0.0008 [-0.0017,+0.0033]      95%            2%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_language_layer17           2.3      61.6          3.3     0.0414  +0.0011 [-0.0021,+0.0041]      93%            3%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_vision_layer11             0.8      65.8          1.2     0.0414  +0.0011 [-0.0019,+0.0043]      93%            3%         NaN           +nan [+nan,+nan]      nan%           nan%
+mlp_vision_early                 4.1      72.6          6.0     0.0415  +0.0012 [-0.0021,+0.0049]      93%            3%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_language_layer15           2.3      61.6          3.3     0.0417  +0.0014 [-0.0010,+0.0039]      91%            3%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_language_layer23           2.3      61.6          3.3     0.0417  +0.0014 [-0.0012,+0.0041]      91%            3%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_language_layer08           2.3      61.4          3.3     0.0418  +0.0015 [-0.0013,+0.0045]      91%            4%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_language_layer12           2.3      61.1          3.3     0.0418  +0.0015 [-0.0005,+0.0034]      91%            4%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_language_layer16           2.3      61.7          3.3     0.0419  +0.0016 [-0.0013,+0.0046]      90%            4%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_language_layer20           2.3      61.7          3.3     0.0419  +0.0016 [-0.0015,+0.0050]      90%            4%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_language_layer14           2.3      61.9          3.3     0.0422  +0.0019 [-0.0005,+0.0041]      88%            5%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_language_layer11           2.3      61.7          3.3     0.0422  +0.0019 [-0.0006,+0.0046]      88%            5%         NaN           +nan [+nan,+nan]      nan%           nan%
+mlp_vision_mid                   4.1      68.5          6.0     0.0422  +0.0019 [-0.0008,+0.0046]      88%            5%         NaN           +nan [+nan,+nan]      nan%           nan%
+attention_language_late          7.5      64.4         11.0     0.0423  +0.0020 [-0.0004,+0.0045]      88%            5%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_language_layer10           2.3      61.5          3.3     0.0423  +0.0020 [-0.0005,+0.0044]      88%            5%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_language_layer19           2.3      61.5          3.3     0.0423  +0.0021 [-0.0006,+0.0050]      88%            5%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_language_layer22           2.3      61.5          3.3     0.0425  +0.0022 [-0.0011,+0.0053]      87%            5%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_language_layer09           2.3      61.7          3.3     0.0426  +0.0024 [-0.0013,+0.0069]      86%            6%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_vision_layer10             0.8      66.8          1.2     0.0427  +0.0024 [-0.0005,+0.0059]      85%            6%         NaN           +nan [+nan,+nan]      nan%           nan%
+attention_vision_early           3.4      71.8          5.1     0.0427  +0.0024 [+0.0002,+0.0051]      85%            6%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_language_layer26           2.3      61.8          3.3     0.0427  +0.0024 [-0.0003,+0.0049]      85%            6%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_vision_layer12             0.8      66.3          1.2     0.0430  +0.0027 [-0.0003,+0.0060]      84%            7%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_vision_layer14             0.8      65.0          1.2     0.0430  +0.0027 [-0.0004,+0.0061]      84%            7%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_vision_late                7.5      67.5         11.1     0.0431  +0.0028 [-0.0008,+0.0066]      83%            7%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_vision_layer15             0.8      64.8          1.2     0.0434  +0.0031 [-0.0003,+0.0069]      81%            8%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_vision_layer13             0.8      65.2          1.2     0.0439  +0.0036 [+0.0007,+0.0069]      78%            9%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_vision_layer09             0.8      67.0          1.2     0.0439  +0.0036 [+0.0006,+0.0068]      78%            9%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_language_layer27           2.3      61.1          3.3     0.0444  +0.0041 [+0.0016,+0.0068]      75%           10%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_language_layer21           2.3      61.7          3.3     0.0445  +0.0042 [+0.0011,+0.0069]      74%           10%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_vision_layer16             0.8      64.7          1.2     0.0447  +0.0044 [+0.0007,+0.0081]      73%           11%         NaN           +nan [+nan,+nan]      nan%           nan%
+mlp_vision_late                  4.1      65.2          6.0     0.0450  +0.0047 [+0.0008,+0.0091]      71%           12%         NaN           +nan [+nan,+nan]      nan%           nan%
+attention_vision_late            3.4      65.3          5.1     0.0451  +0.0048 [+0.0008,+0.0090]      71%           12%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_vision_layer18             0.8      63.4          1.2     0.0451  +0.0048 [-0.0003,+0.0109]      71%           12%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_vision_layer08             0.8      67.7          1.2     0.0453  +0.0050 [+0.0019,+0.0087]      70%           12%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_language_layer25           2.3      61.7          3.3     0.0455  +0.0052 [+0.0018,+0.0088]      68%           13%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_vision_layer17             0.8      64.4          1.2     0.0457  +0.0054 [+0.0023,+0.0083]      67%           13%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_vision_layer22             0.8      62.2          1.2     0.0465  +0.0062 [+0.0028,+0.0107]      62%           15%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_vision_layer24             0.8      61.7          1.2     0.0467  +0.0064 [+0.0019,+0.0118]      61%           16%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_vision_layer07             0.8      68.3          1.2     0.0468  +0.0065 [+0.0034,+0.0101]      60%           16%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_vision_layer26             0.8      61.4          1.2     0.0470  +0.0067 [+0.0027,+0.0110]      59%           17%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_vision_layer25             0.8      61.6          1.2     0.0474  +0.0071 [+0.0026,+0.0117]      57%           18%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_vision_layer19             0.8      63.6          1.2     0.0475  +0.0072 [+0.0028,+0.0122]      56%           18%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_language_layer24           2.3      61.5          3.3     0.0480  +0.0077 [+0.0042,+0.0109]      53%           19%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_vision_layer23             0.8      62.2          1.2     0.0481  +0.0078 [+0.0042,+0.0113]      52%           19%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_language_layer28           2.3      61.7          3.3     0.0483  +0.0080 [+0.0044,+0.0116]      51%           20%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_language_layer29           2.3      61.7          3.3     0.0486  +0.0083 [+0.0052,+0.0118]      49%           21%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_language_layer31           2.3      61.6          3.3     0.0488  +0.0085 [+0.0044,+0.0125]      48%           21%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_vision_layer21             0.8      63.1          1.2     0.0489  +0.0086 [+0.0042,+0.0141]      48%           21%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_vision_layer20             0.8      62.8          1.2     0.0495  +0.0092 [+0.0044,+0.0146]      44%           23%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_language_layer30           2.3      62.0          3.3     0.0507  +0.0104 [+0.0080,+0.0127]      37%           26%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_language_layer32           2.3      61.7          3.3     0.0511  +0.0108 [+0.0067,+0.0151]      34%           27%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_vision_layer06             0.8      68.4          1.2     0.0514  +0.0111 [+0.0055,+0.0169]      32%           28%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_language_layer33           2.3      61.6          3.3     0.0524  +0.0121 [+0.0075,+0.0160]      26%           30%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_vision_layer05             0.8      69.5          1.2     0.0524  +0.0121 [+0.0070,+0.0174]      26%           30%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_vision_layer04             0.8      69.5          1.2     0.0563  +0.0160 [+0.0096,+0.0221]       2%           40%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_vision_layer03             0.8      70.0          1.2     0.0571  +0.0168 [+0.0099,+0.0236]      -2%           42%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_vision_layer01             0.8      69.7          1.2     0.0573  +0.0170 [+0.0100,+0.0241]      -4%           42%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_vision_layer02             0.8      69.7          1.2     0.0576  +0.0173 [+0.0101,+0.0246]      -5%           43%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_vision_layer00             0.8      70.5          1.2     0.0584  +0.0181 [+0.0104,+0.0263]     -10%           45%         NaN           +nan [+nan,+nan]      nan%           nan%
+
+(2a) Frontera de Pareto en validación (menor error para cada presupuesto de parámetros)
+
+                        pct_params  pct_time  adapter_mib  val_error                   val_diff val_kept val_extra_rel  test_error                  test_diff test_kept test_extra_rel
+cell                                                                                                                                                                                  
+block_vision_layer11           0.8      65.8          1.2     0.0414  +0.0011 [-0.0019,+0.0043]      93%            3%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_language_layer01         2.3      61.5          3.3     0.0394  -0.0009 [-0.0039,+0.0024]     105%           -2%      0.0410  +0.0031 [-0.0002,+0.0059]       85%             8%
+block_vision_mid               7.5      69.9         11.1     0.0387  -0.0016 [-0.0047,+0.0017]     110%           -4%         NaN           +nan [+nan,+nan]      nan%           nan%
+mlp_vision                    12.2      77.1         18.0     0.0383  -0.0020 [-0.0045,+0.0008]     112%           -5%      0.0435  +0.0055 [+0.0029,+0.0085]       73%            15%
+
+(2b) Frontera de Pareto en el Test (solo los 14 finalistas)
+
+                        pct_params  pct_time  adapter_mib  val_error                   val_diff val_kept val_extra_rel  test_error                  test_diff test_kept test_extra_rel
+cell                                                                                                                                                                                  
+block_language_layer01         2.3      61.5          3.3     0.0394  -0.0009 [-0.0039,+0.0024]     105%           -2%      0.0410  +0.0031 [-0.0002,+0.0059]       85%             8%
+random_block_vision           22.6      77.4         33.2     0.0399  -0.0004 [-0.0029,+0.0019]     102%           -1%      0.0397  +0.0018 [-0.0002,+0.0037]       91%             5%
+random_block_language         77.4      94.4        113.7     0.0408  +0.0005 [-0.0005,+0.0016]      97%            1%      0.0385  +0.0005 [-0.0000,+0.0011]       97%             2%
+all-linear                   100.0     100.0        147.0     0.0403           +nan [+nan,+nan]     100%            0%      0.0379           +nan [+nan,+nan]      100%             0%
+
+Finalistas ordenados por fracción conservada en el Test
+                        pct_params  pct_time  adapter_mib  val_error                   val_diff val_kept val_extra_rel  test_error                  test_diff test_kept test_extra_rel
+cell                                                                                                                                                                                  
+all-linear                   100.0     100.0        147.0     0.0403           +nan [+nan,+nan]     100%            0%      0.0379           +nan [+nan,+nan]      100%             0%
+random_block_language         77.4      94.4        113.7     0.0408  +0.0005 [-0.0005,+0.0016]      97%            1%      0.0385  +0.0005 [-0.0000,+0.0011]       97%             2%
+random_block_vision           22.6      77.4         33.2     0.0399  -0.0004 [-0.0029,+0.0019]     102%           -1%      0.0397  +0.0018 [-0.0002,+0.0037]       91%             5%
+block_language                77.4      81.1        113.8     0.0401  -0.0002 [-0.0030,+0.0025]     101%           -0%      0.0404  +0.0025 [+0.0007,+0.0044]       88%             7%
+mlp_language                  54.3      69.1         79.7     0.0412  +0.0009 [-0.0020,+0.0041]      95%            2%      0.0408  +0.0029 [+0.0010,+0.0048]       86%             8%
+attention_language            23.2      72.7         34.0     0.0420  +0.0017 [-0.0007,+0.0040]      90%            4%      0.0409  +0.0030 [+0.0002,+0.0056]       85%             8%
+block_language_layer01         2.3      61.5          3.3     0.0394  -0.0009 [-0.0039,+0.0024]     105%           -2%      0.0410  +0.0031 [-0.0002,+0.0059]       85%             8%
+block_language_mid            27.3      67.6         40.1     0.0400  -0.0003 [-0.0028,+0.0022]     102%           -1%      0.0412  +0.0032 [+0.0004,+0.0059]       84%             9%
+block_language_early          25.0      67.5         36.8     0.0405  +0.0002 [-0.0028,+0.0032]      99%            0%      0.0415  +0.0036 [+0.0014,+0.0058]       82%             9%
+block_language_layer00         2.3      61.3          3.3     0.0400  -0.0003 [-0.0030,+0.0026]     102%           -1%      0.0416  +0.0037 [+0.0007,+0.0065]       82%            10%
+mlp_language_early            17.6      63.5         25.8     0.0412  +0.0009 [-0.0022,+0.0041]      95%            2%      0.0417  +0.0038 [+0.0014,+0.0063]       81%            10%
+block_vision                  22.6      81.1         33.2     0.0393  -0.0010 [-0.0032,+0.0013]     106%           -2%      0.0420  +0.0041 [+0.0016,+0.0067]       80%            11%
+attention_vision              10.3      73.5         15.2     0.0406  +0.0003 [-0.0031,+0.0042]      98%            1%      0.0424  +0.0045 [+0.0017,+0.0072]       78%            12%
+mlp_vision                    12.2      77.1         18.0     0.0383  -0.0020 [-0.0045,+0.0008]     112%           -5%      0.0435  +0.0055 [+0.0029,+0.0085]       73%            15%
+
+(3) Tiempo frente a parámetros (87 celdas sin all-linear): Pearson 0.682, Spearman 0.219; ajuste lineal %tiempo = 63.6 + 0.279 x %parámetros. Celdas con <= 10% de parámetros: tiempo 61.0% a 73.8% (mediana 62.0%) del de all-linear. Rango global del tiempo: 61.0% a 100.0%.
+
+Disco: all-linear 147.0 MiB; una capa de lenguaje 3.3 MiB (2.3%). Los pesos se guardan en fp32: MiB = 4 bytes x parámetros / 2^20.
+
+====================================================================================================
+RECETA B (prose_v1). all-linear: 38,497,792 parámetros, 4205 s, 147.0 MiB; error de validación 0.0405 (constante 0.0567), Test 0.0386 (constante 0.0584)
+
+(1) Ubicaciones con <= 10% de los parámetros de all-linear (73), ordenadas por error de validación; diff = ubicación - all-linear con IC por bloques de captura; kept = fracción de la mejora conservada
+
+                          pct_params  pct_time  adapter_mib  val_error                   val_diff val_kept val_extra_rel  test_error                  test_diff test_kept test_extra_rel
+cell                                                                                                                                                                                    
+block_language_layer00           2.3      60.2          3.3     0.0413  +0.0008 [-0.0019,+0.0034]      95%            2%      0.0426  +0.0040 [+0.0010,+0.0070]       80%            10%
+block_language_layer07           2.3      60.1          3.3     0.0414  +0.0009 [-0.0033,+0.0051]      94%            2%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_language_layer10           2.3      59.9          3.3     0.0414  +0.0009 [-0.0029,+0.0049]      94%            2%         NaN           +nan [+nan,+nan]      nan%           nan%
+attention_language_mid           8.2      63.5         12.0     0.0417  +0.0012 [-0.0015,+0.0040]      93%            3%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_language_layer11           2.3      59.7          3.3     0.0418  +0.0012 [-0.0021,+0.0049]      92%            3%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_language_layer06           2.3      60.1          3.3     0.0419  +0.0014 [-0.0020,+0.0052]      91%            3%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_language_layer08           2.3      60.0          3.3     0.0421  +0.0016 [-0.0028,+0.0062]      90%            4%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_language_layer05           2.3      59.9          3.3     0.0422  +0.0016 [-0.0017,+0.0052]      90%            4%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_language_layer01           2.3      60.0          3.3     0.0423  +0.0018 [-0.0014,+0.0048]      89%            4%      0.0440  +0.0054 [+0.0020,+0.0086]       73%            14%
+block_language_layer13           2.3      59.6          3.3     0.0424  +0.0019 [-0.0014,+0.0054]      88%            5%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_language_layer15           2.3      59.9          3.3     0.0425  +0.0020 [-0.0013,+0.0056]      88%            5%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_language_layer16           2.3      60.1          3.3     0.0428  +0.0023 [-0.0010,+0.0059]      86%            6%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_language_layer19           2.3      60.0          3.3     0.0429  +0.0024 [-0.0005,+0.0053]      85%            6%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_language_layer18           2.3      59.7          3.3     0.0434  +0.0028 [-0.0008,+0.0067]      82%            7%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_language_layer09           2.3      59.9          3.3     0.0434  +0.0029 [-0.0006,+0.0065]      82%            7%         NaN           +nan [+nan,+nan]      nan%           nan%
+attention_language_early         7.5      63.2         11.0     0.0435  +0.0030 [+0.0003,+0.0061]      81%            7%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_language_layer20           2.3      59.8          3.3     0.0436  +0.0031 [+0.0006,+0.0058]      81%            8%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_language_layer14           2.3      60.0          3.3     0.0437  +0.0031 [-0.0003,+0.0067]      80%            8%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_language_layer12           2.3      59.9          3.3     0.0443  +0.0038 [+0.0003,+0.0074]      77%            9%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_language_layer17           2.3      60.3          3.3     0.0446  +0.0041 [+0.0004,+0.0077]      75%           10%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_language_layer23           2.3      60.0          3.3     0.0452  +0.0047 [+0.0014,+0.0078]      71%           12%         NaN           +nan [+nan,+nan]      nan%           nan%
+attention_language_late          7.5      63.2         11.0     0.0455  +0.0050 [+0.0014,+0.0085]      69%           12%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_language_layer03           2.3      60.6          3.3     0.0457  +0.0052 [+0.0016,+0.0088]      68%           13%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_language_layer04           2.3      60.3          3.3     0.0490  +0.0085 [+0.0046,+0.0129]      48%           21%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_language_layer02           2.3      59.9          3.3     0.0527  +0.0122 [+0.0087,+0.0164]      25%           30%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_vision_mid                 7.5      68.6         11.1     0.0533  +0.0128 [+0.0085,+0.0181]      21%           32%         NaN           +nan [+nan,+nan]      nan%           nan%
+mlp_vision_mid                   4.1      67.6          6.0     0.0533  +0.0128 [+0.0078,+0.0179]      21%           32%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_language_layer25           2.3      60.1          3.3     0.0534  +0.0128 [+0.0070,+0.0193]      20%           32%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_language_layer24           2.3      59.9          3.3     0.0535  +0.0130 [+0.0064,+0.0197]      20%           32%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_language_layer21           2.3      59.5          3.3     0.0535  +0.0130 [+0.0078,+0.0185]      20%           32%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_language_layer26           2.3      59.4          3.3     0.0543  +0.0138 [+0.0074,+0.0206]      15%           34%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_language_layer27           2.3      60.2          3.3     0.0544  +0.0139 [+0.0078,+0.0204]      14%           34%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_language_layer22           2.3      59.9          3.3     0.0552  +0.0147 [+0.0081,+0.0214]       9%           36%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_language_layer28           2.3      60.1          3.3     0.0554  +0.0149 [+0.0081,+0.0219]       8%           37%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_language_layer30           2.3      60.1          3.3     0.0566  +0.0161 [+0.0096,+0.0233]       1%           40%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_language_layer32           2.3      59.9          3.3     0.0572  +0.0167 [+0.0100,+0.0244]      -3%           41%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_language_layer31           2.3      60.2          3.3     0.0573  +0.0168 [+0.0103,+0.0238]      -4%           41%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_language_layer33           2.3      59.8          3.3     0.0575  +0.0170 [+0.0100,+0.0244]      -5%           42%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_vision_layer12             0.8      64.4          1.2     0.0612  +0.0207 [+0.0116,+0.0325]     -28%           51%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_vision_layer25             0.8      59.6          1.2     0.0615  +0.0209 [+0.0158,+0.0274]     -30%           52%         NaN           +nan [+nan,+nan]      nan%           nan%
+attention_vision_mid             3.4      66.5          5.1     0.0619  +0.0213 [+0.0152,+0.0296]     -32%           53%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_vision_layer11             0.8      64.4          1.2     0.0620  +0.0215 [+0.0144,+0.0296]     -33%           53%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_language_layer29           2.3      59.9          3.3     0.0623  +0.0218 [+0.0150,+0.0285]     -35%           54%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_vision_layer10             0.8      64.5          1.2     0.0623  +0.0218 [+0.0151,+0.0295]     -35%           54%         NaN           +nan [+nan,+nan]      nan%           nan%
+attention_vision_late            3.4      63.9          5.1     0.0638  +0.0233 [+0.0165,+0.0322]     -44%           58%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_vision_layer18             0.8      62.0          1.2     0.0654  +0.0249 [+0.0178,+0.0327]     -54%           61%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_vision_late                7.5      66.0         11.1     0.0661  +0.0256 [+0.0202,+0.0319]     -58%           63%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_vision_layer22             0.8      60.6          1.2     0.0671  +0.0266 [+0.0182,+0.0357]     -64%           66%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_vision_layer13             0.8      63.5          1.2     0.0680  +0.0275 [+0.0202,+0.0360]     -70%           68%         NaN           +nan [+nan,+nan]      nan%           nan%
+attention_vision_early           3.4      70.4          5.1     0.0689  +0.0284 [+0.0216,+0.0363]     -75%           70%         NaN           +nan [+nan,+nan]      nan%           nan%
+mlp_vision_late                  4.1      63.8          6.0     0.0690  +0.0284 [+0.0214,+0.0363]     -76%           70%         NaN           +nan [+nan,+nan]      nan%           nan%
+mlp_vision_early                 4.1      71.0          6.0     0.0714  +0.0309 [+0.0245,+0.0380]     -91%           76%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_vision_layer08             0.8      64.6          1.2     0.0716  +0.0311 [+0.0216,+0.0426]     -92%           77%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_vision_layer23             0.8      60.0          1.2     0.0718  +0.0313 [+0.0249,+0.0390]     -93%           77%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_vision_early               7.5      72.4         11.1     0.0731  +0.0326 [+0.0258,+0.0409]    -101%           80%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_vision_layer14             0.8      63.4          1.2     0.0739  +0.0334 [+0.0249,+0.0439]    -106%           82%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_vision_layer15             0.8      62.8          1.2     0.0740  +0.0335 [+0.0253,+0.0435]    -107%           83%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_vision_layer06             0.8      66.3          1.2     0.0745  +0.0340 [+0.0229,+0.0471]    -110%           84%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_vision_layer09             0.8      65.2          1.2     0.0747  +0.0342 [+0.0267,+0.0426]    -111%           84%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_vision_layer21             0.8      60.6          1.2     0.0758  +0.0353 [+0.0245,+0.0480]    -118%           87%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_vision_layer16             0.8      63.1          1.2     0.0760  +0.0355 [+0.0263,+0.0461]    -119%           88%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_vision_layer17             0.8      62.5          1.2     0.0762  +0.0357 [+0.0250,+0.0486]    -120%           88%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_vision_layer19             0.8      61.1          1.2     0.0762  +0.0357 [+0.0280,+0.0460]    -120%           88%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_vision_layer24             0.8      60.5          1.2     0.0764  +0.0358 [+0.0284,+0.0446]    -122%           89%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_vision_layer20             0.8      61.5          1.2     0.0774  +0.0369 [+0.0253,+0.0522]    -128%           91%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_vision_layer26             0.8      59.9          1.2     0.0834  +0.0429 [+0.0334,+0.0540]    -165%          106%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_vision_layer07             0.8      66.5          1.2     0.0840  +0.0435 [+0.0335,+0.0552]    -169%          107%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_vision_layer05             0.8      66.6          1.2     0.0960  +0.0555 [+0.0436,+0.0710]    -243%          137%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_vision_layer04             0.8      67.1          1.2     0.1229  +0.0824 [+0.0618,+0.1086]    -409%          203%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_vision_layer03             0.8      67.3          1.2     0.1276  +0.0871 [+0.0685,+0.1093]    -438%          215%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_vision_layer00             0.8      68.9          1.2     0.1549  +0.1144 [+0.1029,+0.1280]    -606%          282%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_vision_layer02             0.8      68.6          1.2     0.1588  +0.1183 [+0.1010,+0.1409]    -630%          292%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_vision_layer01             0.8      68.4          1.2     0.1839  +0.1434 [+0.1272,+0.1634]    -785%          354%         NaN           +nan [+nan,+nan]      nan%           nan%
+
+(2a) Frontera de Pareto en validación (menor error para cada presupuesto de parámetros)
+
+                        pct_params  pct_time  adapter_mib  val_error                   val_diff val_kept val_extra_rel  test_error                  test_diff test_kept test_extra_rel
+cell                                                                                                                                                                                  
+block_vision_layer12           0.8      64.4          1.2     0.0612  +0.0207 [+0.0116,+0.0325]     -28%           51%         NaN           +nan [+nan,+nan]      nan%           nan%
+block_language_layer00         2.3      60.2          3.3     0.0413  +0.0008 [-0.0019,+0.0034]      95%            2%      0.0426  +0.0040 [+0.0010,+0.0070]       80%            10%
+mlp_language_early            17.6      62.4         25.8     0.0395  -0.0010 [-0.0035,+0.0016]     106%           -2%      0.0408  +0.0022 [+0.0005,+0.0039]       89%             6%
+random_block_vision           22.6      75.4         33.2     0.0390  -0.0015 [-0.0037,+0.0005]     109%           -4%      0.0391  +0.0006 [-0.0009,+0.0019]       97%             1%
+
+(2b) Frontera de Pareto en el Test (solo los 14 finalistas)
+
+                        pct_params  pct_time  adapter_mib  val_error                   val_diff val_kept val_extra_rel  test_error                  test_diff test_kept test_extra_rel
+cell                                                                                                                                                                                  
+block_language_layer00         2.3      60.2          3.3     0.0413  +0.0008 [-0.0019,+0.0034]      95%            2%      0.0426  +0.0040 [+0.0010,+0.0070]       80%            10%
+mlp_language_early            17.6      62.4         25.8     0.0395  -0.0010 [-0.0035,+0.0016]     106%           -2%      0.0408  +0.0022 [+0.0005,+0.0039]       89%             6%
+random_block_vision           22.6      75.4         33.2     0.0390  -0.0015 [-0.0037,+0.0005]     109%           -4%      0.0391  +0.0006 [-0.0009,+0.0019]       97%             1%
+all-linear                   100.0     100.0        147.0     0.0405           +nan [+nan,+nan]     100%            0%      0.0386           +nan [+nan,+nan]      100%             0%
+
+Finalistas ordenados por fracción conservada en el Test
+                        pct_params  pct_time  adapter_mib  val_error                   val_diff val_kept val_extra_rel  test_error                  test_diff test_kept test_extra_rel
+cell                                                                                                                                                                                  
+all-linear                   100.0     100.0        147.0     0.0405           +nan [+nan,+nan]     100%            0%      0.0386           +nan [+nan,+nan]      100%             0%
+random_block_vision           22.6      75.4         33.2     0.0390  -0.0015 [-0.0037,+0.0005]     109%           -4%      0.0391  +0.0006 [-0.0009,+0.0019]       97%             1%
+random_block_language         77.4      92.8        113.7     0.0402  -0.0003 [-0.0018,+0.0011]     102%           -1%      0.0396  +0.0010 [+0.0002,+0.0019]       95%             3%
+mlp_language                  54.3      68.2         79.7     0.0403  -0.0002 [-0.0028,+0.0025]     101%           -0%      0.0402  +0.0016 [-0.0003,+0.0032]       92%             4%
+block_language                77.4      78.6        113.8     0.0397  -0.0008 [-0.0032,+0.0018]     105%           -2%      0.0403  +0.0017 [-0.0002,+0.0036]       91%             4%
+attention_language            23.2      71.2         34.0     0.0396  -0.0009 [-0.0036,+0.0017]     106%           -2%      0.0408  +0.0022 [-0.0000,+0.0044]       89%             6%
+mlp_language_early            17.6      62.4         25.8     0.0395  -0.0010 [-0.0035,+0.0016]     106%           -2%      0.0408  +0.0022 [+0.0005,+0.0039]       89%             6%
+block_language_early          25.0      66.3         36.8     0.0396  -0.0009 [-0.0036,+0.0019]     106%           -2%      0.0410  +0.0024 [+0.0008,+0.0040]       88%             6%
+block_language_mid            27.3      66.3         40.1     0.0406  +0.0001 [-0.0033,+0.0032]      99%            0%      0.0416  +0.0030 [+0.0003,+0.0055]       85%             8%
+block_language_layer00         2.3      60.2          3.3     0.0413  +0.0008 [-0.0019,+0.0034]      95%            2%      0.0426  +0.0040 [+0.0010,+0.0070]       80%            10%
+block_language_layer01         2.3      60.0          3.3     0.0423  +0.0018 [-0.0014,+0.0048]      89%            4%      0.0440  +0.0054 [+0.0020,+0.0086]       73%            14%
+block_vision                  22.6      77.5         33.2     0.0522  +0.0117 [+0.0087,+0.0152]      28%           29%      0.0555  +0.0169 [+0.0127,+0.0208]       15%            44%
+mlp_vision                    12.2      75.0         18.0     0.0572  +0.0166 [+0.0105,+0.0245]      -3%           41%      0.0588  +0.0202 [+0.0157,+0.0251]       -2%            52%
+attention_vision              10.3      71.8         15.2     0.0547  +0.0142 [+0.0089,+0.0201]      12%           35%      0.0651  +0.0265 [+0.0214,+0.0315]      -34%            69%
+
+(3) Tiempo frente a parámetros (87 celdas sin all-linear): Pearson 0.696, Spearman 0.248; ajuste lineal %tiempo = 62.0 + 0.279 x %parámetros. Celdas con <= 10% de parámetros: tiempo 59.4% a 72.4% (mediana 60.5%) del de all-linear. Rango global del tiempo: 59.4% a 100.0%.
+
+Disco: all-linear 147.0 MiB; una capa de lenguaje 3.3 MiB (2.3%). Los pesos se guardan en fp32: MiB = 4 bytes x parámetros / 2^20.

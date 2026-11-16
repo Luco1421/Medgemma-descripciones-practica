@@ -1,0 +1,107 @@
+VALIDACIÓN EXTERNA EN MM-ODIR-129. Métricas con la imagen correcta, media de las semillas; entre corchetes, IC 95 % remuestreando pacientes.
+
+=== A (chaksu_json_v1); análogo en Chákṣu: test
+celda                    Chákṣu AUC dec.    ρ gt |        AUC etiqueta [IC]  ρ escrito  ρ máscara MAE másc.   sens  espec |  gan. AUC barajada  blanco
+all-linear                         0.931  +0.751 |    0.860 [0.782, 0.925]     +0.706     +0.197     0.112  0.585  0.883 |             +0.346  +0.360
+block_vision                       0.903  +0.719 |    0.800 [0.711, 0.882]     +0.625     +0.128     0.128  0.488  0.928 |             +0.331  +0.300
+block_language                     0.911  +0.717 |    0.850 [0.765, 0.917]     +0.687     +0.196     0.117  0.531  0.917 |             +0.344  +0.350
+attention_vision                   0.906  +0.706 |    0.806 [0.721, 0.887]     +0.639     +0.090     0.130  0.488  0.911 |             +0.359  +0.306
+attention_language                 0.897  +0.723 |    0.827 [0.741, 0.903]     +0.682     +0.122     0.131  0.411  0.939 |             +0.338  +0.327
+mlp_vision                         0.885  +0.702 |    0.785 [0.696, 0.870]     +0.658     +0.151     0.134  0.560  0.883 |             +0.278  +0.285
+mlp_language                       0.908  +0.718 |    0.842 [0.751, 0.913]     +0.680     +0.193     0.121  0.498  0.933 |             +0.337  +0.342
+random_block_vision                0.918  +0.742 |    0.832 [0.736, 0.907]     +0.677     +0.178     0.123  0.507  0.894 |             +0.317  +0.332
+random_block_language              0.930  +0.743 |    0.858 [0.771, 0.928]     +0.696     +0.256     0.112  0.585  0.900 |             +0.335  +0.358
+block_language_early               0.913  +0.725 |    0.841 [0.753, 0.915]     +0.689     +0.141     0.128  0.493  0.922 |             +0.346  +0.341
+block_language_mid                 0.896  +0.718 |    0.832 [0.749, 0.903]     +0.682     +0.099     0.129  0.420  0.950 |             +0.344  +0.332
+mlp_language_early                 0.910  +0.720 |    0.842 [0.755, 0.914]     +0.689     +0.143     0.128  0.498  0.911 |             +0.341  +0.342
+block_language_layer00             0.909  +0.718 |    0.844 [0.763, 0.912]     +0.700     +0.208     0.138  0.357  0.950 |             +0.348  +0.344
+block_language_layer01             0.907  +0.727 |    0.841 [0.751, 0.915]     +0.692     +0.148     0.135  0.391  0.928 |             +0.374  +0.341
+base                               0.505  +0.043 |    0.522 [0.500, 0.547]     +0.146     +0.128     0.185  0.087  0.983 |             +0.031  +0.022
+  diferencia de AUC con `all-linear` (IC 95 %, pacientes):
+    block_vision              -0.060 [-0.098, -0.020]   más que lo relevante
+    block_language            -0.010 [-0.032, +0.010]
+    attention_vision          -0.054 [-0.101, -0.007]   más que lo relevante
+    attention_language        -0.033 [-0.072, +0.003]
+    mlp_vision                -0.075 [-0.132, -0.025]   más que lo relevante
+    mlp_language              -0.019 [-0.044, +0.005]
+    random_block_vision       -0.029 [-0.061, -0.002]
+    random_block_language     -0.002 [-0.016, +0.011]
+    block_language_early      -0.019 [-0.043, +0.004]
+    block_language_mid        -0.028 [-0.060, +0.001]
+    mlp_language_early        -0.018 [-0.046, +0.006]
+    block_language_layer00    -0.016 [-0.047, +0.014]
+    block_language_layer01    -0.019 [-0.053, +0.012]
+  H3: Spearman entre el error en el Test de Chákṣu y el AUC externo de las 14 ubicaciones -0.657 (negativo = el orden transfiere); mejor AUC externo: all-linear (0.860); `all-linear` 0.860
+
+=== B (chaksu_prose_v1); análogo en Chákṣu: test
+celda                    Chákṣu AUC dec.    ρ gt |        AUC etiqueta [IC]  ρ escrito  ρ máscara MAE másc.   sens  espec |  gan. AUC barajada  blanco
+all-linear                         0.925  +0.742 |    0.855 [0.772, 0.923]     +0.708     +0.143     0.116  0.565  0.900 |             +0.367  +0.355
+block_vision                       0.791  +0.534 |    0.709 [0.636, 0.780]     +0.405     +0.014     0.166  0.261  0.922 |             +0.212  +0.209
+block_language                     0.911  +0.725 |    0.845 [0.760, 0.916]     +0.683     +0.127     0.124  0.527  0.917 |             +0.344  +0.345
+attention_vision                   0.702  +0.365 |    0.622 [0.567, 0.678]     +0.267     +0.175     0.184  0.338  0.828 |             +0.096  +0.122
+attention_language                 0.902  +0.727 |    0.838 [0.754, 0.909]     +0.694     +0.132     0.132  0.401  0.950 |             +0.351  +0.338
+mlp_vision                         0.699  +0.375 |    0.635 [0.569, 0.700]     +0.330     +0.069     0.188  0.150  0.906 |             +0.113  +0.135
+mlp_language                       0.905  +0.726 |    0.841 [0.749, 0.911]     +0.664     +0.153     0.127  0.464  0.917 |             +0.338  +0.341
+random_block_vision                0.913  +0.745 |    0.846 [0.752, 0.918]     +0.685     +0.147     0.124  0.498  0.917 |             +0.348  +0.346
+random_block_language              0.928  +0.741 |    0.852 [0.768, 0.921]     +0.693     +0.126     0.118  0.570  0.889 |             +0.351  +0.352
+block_language_early               0.905  +0.727 |    0.841 [0.757, 0.912]     +0.684     +0.169     0.130  0.401  0.939 |             +0.344  +0.341
+block_language_mid                 0.904  +0.729 |    0.830 [0.747, 0.903]     +0.676     +0.020     0.132  0.415  0.939 |             +0.346  +0.330
+mlp_language_early                 0.910  +0.726 |    0.843 [0.751, 0.917]     +0.690     +0.109     0.132  0.357  0.933 |             +0.337  +0.343
+block_language_layer00             0.892  +0.692 |    0.823 [0.731, 0.896]     +0.645     +0.112     0.146  0.382  0.944 |             +0.310  +0.323
+block_language_layer01             0.877  +0.676 |    0.841 [0.755, 0.913]     +0.676     +0.144     0.148  0.401  0.961 |             +0.339  +0.341
+base                               0.617  +0.183 |    0.848 [0.778, 0.910]     +0.623     +0.193     0.233  0.493  0.867 |             +0.305  +0.348
+  diferencia de AUC con `all-linear` (IC 95 %, pacientes):
+    block_vision              -0.146 [-0.212, -0.079]   más que lo relevante
+    block_language            -0.010 [-0.036, +0.013]
+    attention_vision          -0.233 [-0.319, -0.134]   más que lo relevante
+    attention_language        -0.017 [-0.048, +0.011]
+    mlp_vision                -0.220 [-0.298, -0.137]   más que lo relevante
+    mlp_language              -0.015 [-0.041, +0.008]
+    random_block_vision       -0.010 [-0.036, +0.013]
+    random_block_language     -0.003 [-0.017, +0.009]
+    block_language_early      -0.014 [-0.046, +0.015]
+    block_language_mid        -0.025 [-0.061, +0.008]
+    mlp_language_early        -0.013 [-0.036, +0.010]
+    block_language_layer00    -0.033 [-0.075, +0.004]
+    block_language_layer01    -0.014 [-0.057, +0.023]
+  H3: Spearman entre el error en el Test de Chákṣu y el AUC externo de las 14 ubicaciones -0.891 (negativo = el orden transfiere); mejor AUC externo: all-linear (0.855); `all-linear` 0.855
+
+=== CoT (chaksu_cot_v1); análogo en Chákṣu: validation
+celda                    Chákṣu AUC dec.    ρ gt |        AUC etiqueta [IC]  ρ escrito  ρ máscara MAE másc.   sens  espec |  gan. AUC barajada  blanco
+all-linear                         0.920  +0.729 |    0.853 [0.768, 0.922]     +0.700     +0.221     0.110  0.556  0.883 |             +0.346  +0.353
+base                               0.570  +0.022 |    0.501 [0.443, 0.560]     -0.056     -0.107     0.176  0.014  0.050 |             +0.049  +0.001
+
+=== Prompts (chaksu_prompts_A); análogo en Chákṣu: validation
+celda                    Chákṣu AUC dec.    ρ gt |        AUC etiqueta [IC]  ρ escrito  ρ máscara MAE másc.   sens  espec |  gan. AUC barajada  blanco
+P0                                 0.510  +0.135 |    0.522 [0.500, 0.547]     +0.146     +0.128     0.185  0.087  0.983 |             +0.031  +0.022
+P0b                                0.547  +0.183 |    0.570 [0.528, 0.616]     +0.393     +0.243     0.185  0.043  1.000 |             +0.090  +0.070
+P0c                                0.500    +nan |    0.521 [0.489, 0.558]     +0.096     +0.202     0.183  0.072  0.983 |             +0.031  +0.021
+P1                                 0.696  +0.226 |    0.606 [0.540, 0.676]     +0.340     -0.018     0.202  0.029  1.000 |             +0.121  +0.106
+P2                                 0.708  +0.274 |    0.720 [0.636, 0.799]     +0.494     +0.063     0.213  0.681  0.733 |             +0.170  +0.220
+P3                                 0.608  +0.086 |    0.725 [0.626, 0.820]     +0.452     +0.212     0.159  0.130  0.833 |             +0.176  +0.225
+P4                                 0.500    +nan |    0.500 [0.500, 0.500]       +nan       +nan     0.170  0.000  0.000 |             +0.000  +0.000
+P5                                 0.824  +0.379 |    0.825 [0.748, 0.893]     +0.579     +0.113     0.150  0.696  0.833 |             +0.336  +0.325
+P4_t1024                           0.490  +0.021 |    0.621 [0.514, 0.711]     +0.148     +0.011     0.213  0.406  0.700 |             +0.055  +0.121
+
+=== Diferencia de AUC con `all-linear` de A (IC 95 %, pacientes; relevante 0.05)
+  B       all-linear                -0.005 [-0.023, +0.013]
+  CoT     all-linear                -0.007 [-0.025, +0.011]
+  Prompts P0                        -0.338 [-0.409, -0.259]   más que lo relevante
+  Prompts P0b                       -0.291 [-0.362, -0.210]   más que lo relevante
+  Prompts P0c                       -0.340 [-0.407, -0.269]   más que lo relevante
+  Prompts P1                        -0.255 [-0.324, -0.183]   más que lo relevante
+  Prompts P2                        -0.140 [-0.218, -0.059]   más que lo relevante
+  Prompts P3                        -0.135 [-0.244, -0.026]   más que lo relevante
+  Prompts P4                        -0.360 [-0.425, -0.282]   más que lo relevante
+  Prompts P5                        -0.035 [-0.096, +0.028]
+  Prompts P4_t1024                  -0.240 [-0.355, -0.136]   más que lo relevante
+
+=== C (etapa 1 = `all-linear` de A; etapa 2 solo texto), MM-ODIR-129
+etapa 2    control  fidelidad mín.  hallazgos nuevos  AUC etiqueta  AUC de A (etapa 1)
+base          real           1.000                 0         0.860               0.860
+base      shuffled           1.000                 0         0.514               0.514
+base         blank           1.000                 0         0.500               0.500
+lora          real           1.000                 0         0.860               0.860
+lora      shuffled           1.000                 0         0.514               0.514
+lora         blank           1.000                 0         0.500               0.500
+

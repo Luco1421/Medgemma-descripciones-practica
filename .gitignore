@@ -1,0 +1,28 @@
+# Caches y logs
+__pycache__/
+.cache/
+wandb/
+logs/
+*.out
+*.err
+
+# Datos y corridas, fuera del repo. Las descargas íntegras de terceros viven en ../datasets/.
+# experiments/ guarda pesos de adapters (cientos de MB) y predicciones crudas con transcripciones de los
+# oftalmólogos, que no corresponde redistribuir desde aquí; la trazabilidad la da el run_config.json de cada
+# corrida y la procedencia anotada en cada análisis, no el versionado.
+datasets/
+experiments/
+
+# Manifests, auditorías y particiones por proyecto: derivados regenerables que incluyen
+# transcripciones y nombres de anotadores de terceros, que no se redistribuyen desde aquí.
+data/
+
+# Salidas de results/: las tablas por rejilla, las figuras y el RGN son métricas agregadas y se versionan.
+# Se excluyen las que contienen predicciones o datos por imagen de terceros y las activaciones (cientos de MB).
+results/audit/*.csv
+results/normalized/
+results/probes/*.npz
+
+# Prueba de funcionamiento del prototipo con imágenes de terceros (REFUGE, JustRAIGS): solo local.
+prototype/prototipo_externas*.ipynb
+slurm/notebook_externas.slurm

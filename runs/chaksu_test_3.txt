@@ -1,0 +1,22 @@
+# Test: RECETA CARPETA_DE_LA_CORRIDA; las predicciones van a <carpeta>/test/
+json_v1 experiments/chaksu_json_v1/all-linear_s42
+prose_v1 experiments/chaksu_prose_v1/all-linear_s43
+json_v1 experiments/chaksu_json_v1/block_vision_s44
+json_v1 experiments/chaksu_json_v1/block_language_s42
+prose_v1 experiments/chaksu_prose_v1/block_language_s43
+json_v1 experiments/chaksu_json_v1/attention_vision_s44
+json_v1 experiments/chaksu_json_v1/attention_language_s42
+prose_v1 experiments/chaksu_prose_v1/attention_language_s43
+json_v1 experiments/chaksu_json_v1/mlp_vision_s44
+json_v1 experiments/chaksu_json_v1/mlp_language_s42
+prose_v1 experiments/chaksu_prose_v1/mlp_language_s43
+json_v1 experiments/chaksu_json_v1/random_block_vision_s44
+json_v1 experiments/chaksu_json_v1/random_block_language_s42
+prose_v1 experiments/chaksu_prose_v1/random_block_language_s43
+json_v1 experiments/chaksu_json_v1/block_language_early_s44
+json_v1 experiments/chaksu_json_v1/block_language_mid_s42
+prose_v1 experiments/chaksu_prose_v1/block_language_mid_s43
+json_v1 experiments/chaksu_json_v1/mlp_language_early_s44
+json_v1 experiments/chaksu_json_v1/block_language_layer00_s42
+prose_v1 experiments/chaksu_prose_v1/block_language_layer00_s43
+json_v1 experiments/chaksu_json_v1/block_language_layer01_s44

@@ -1,0 +1,4 @@
+# Cadena de pensamiento con LoRA en todo el modelo, tres semillas. Formato: DATASET RECETA CAPAS SEMILLA
+chaksu cot_v1 all-linear 42
+chaksu cot_v1 all-linear 43
+chaksu cot_v1 all-linear 44

@@ -1,0 +1,7 @@
+Efecto del <bos> duplicado en la generación (all-linear, A, validación, vCDR |error| medio)
+ semilla |  un <bos>  dos <bos>
+      42 |    0.0402     0.0390
+      43 |    0.0402     0.0405
+      44 |    0.0405     0.0403
+media de semillas: un <bos> 0.0403, dos <bos> 0.0399
+dos − uno (emparejada, IC 95 % por bloques): -0.0004 [-0.0016, +0.0009]

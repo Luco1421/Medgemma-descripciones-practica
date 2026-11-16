@@ -1,0 +1,54 @@
+=================== Receta A (json_v1); Test de 336 imágenes; constante 0.0584, base 0.0599, all-linear 0.0379
+ubicación                  parám. M error Test        dif. con all-linear [IC95]  IC en ±0.004  dif. validación
+block_vision                   8.70     0.0420       +0.0041 [+0.0016, +0.0067]        no          -0.0010  (cambia de lado)
+block_language                29.80     0.0404       +0.0025 [+0.0007, +0.0044]        no          -0.0002  (cambia de lado)
+attention_vision               3.98     0.0424       +0.0045 [+0.0017, +0.0072]        no          +0.0003
+attention_language             8.91     0.0409       +0.0030 [+0.0002, +0.0056]        no          +0.0017
+mlp_vision                     4.71     0.0435       +0.0055 [+0.0029, +0.0085]        no          -0.0020  (cambia de lado)
+mlp_language                  20.89     0.0408       +0.0029 [+0.0010, +0.0048]        no          +0.0009
+random_block_vision            8.69     0.0397       +0.0018 [-0.0002, +0.0037]        sí          -0.0004  (cambia de lado)
+random_block_language         29.79     0.0385       +0.0005 [-0.0000, +0.0011]        sí          +0.0005
+block_language_early           9.64     0.0415       +0.0036 [+0.0014, +0.0058]        no          +0.0002
+block_language_mid            10.52     0.0412       +0.0032 [+0.0004, +0.0059]        no          -0.0003  (cambia de lado)
+mlp_language_early             6.76     0.0417       +0.0038 [+0.0014, +0.0063]        no          +0.0009
+block_language_layer00         0.88     0.0416       +0.0037 [+0.0007, +0.0065]        no          -0.0003  (cambia de lado)
+block_language_layer01         0.88     0.0410       +0.0031 [-0.0002, +0.0059]        no          -0.0009  (cambia de lado)
+
+Criterio 1, eficiencia (IC95 de celda − all-linear dentro de ±0.004):
+  eficientes que cumplen: [] de ['block_language_early', 'block_language_mid', 'mlp_language_early', 'block_language_layer00', 'block_language_layer01']
+Criterio 2, bloque − control aleatorio a igual presupuesto (validación en A: −0.0006 visión y −0.0007 lenguaje; en B: +0.0132 y −0.0005):
+  visión   block_vision − random_block_vision: +0.0023 [-0.0004, +0.0049]
+  lenguaje block_language − random_block_language: +0.0019 [+0.0000, +0.0039]
+Criterio 3, replicación: ubicaciones mejores que all-linear (IC por debajo de 0): ninguna; peores en más de 0.004 con IC por encima: ninguna
+Criterio 4, controles de imagen: ganancia mínima sobre la barajada +0.0335 (block_language_layer00), sobre el blanco +0.0158 (attention_vision); base: +0.0009 y -0.0016
+Criterio 5, transferencia: Spearman del error de validación con el del Test en las 14 ubicaciones -0.284; de la diferencia con all-linear -0.325; ubicaciones que cambian de lado respecto de all-linear: 7 de 13
+  mejor en validación: mlp_vision (0.0383), en Test 0.0435; mejor en Test: all-linear (0.0379)
+Criterio 6, referencias: constante 0.0584 (validación 0.0567); base 0.0599 (validación 0.0615); all-linear 0.0379 (validación 0.0403), 35 % por debajo de la constante
+
+=================== Receta B (prose_v1); Test de 336 imágenes; constante 0.0584, base 0.1841, all-linear 0.0386
+ubicación                  parám. M error Test        dif. con all-linear [IC95]  IC en ±0.004  dif. validación
+block_vision                   8.70     0.0555       +0.0169 [+0.0127, +0.0208]        no          +0.0117
+block_language                29.80     0.0403       +0.0017 [-0.0002, +0.0036]        sí          -0.0008  (cambia de lado)
+attention_vision               3.98     0.0651       +0.0265 [+0.0214, +0.0315]        no          +0.0142
+attention_language             8.91     0.0408       +0.0022 [-0.0000, +0.0044]        no          -0.0009  (cambia de lado)
+mlp_vision                     4.71     0.0588       +0.0202 [+0.0157, +0.0251]        no          +0.0166
+mlp_language                  20.89     0.0402       +0.0016 [-0.0003, +0.0032]        sí          -0.0002  (cambia de lado)
+random_block_vision            8.69     0.0391       +0.0006 [-0.0009, +0.0019]        sí          -0.0015  (cambia de lado)
+random_block_language         29.79     0.0396       +0.0010 [+0.0002, +0.0019]        sí          -0.0003  (cambia de lado)
+block_language_early           9.64     0.0410       +0.0024 [+0.0008, +0.0040]        no          -0.0009  (cambia de lado)
+block_language_mid            10.52     0.0416       +0.0030 [+0.0003, +0.0055]        no          +0.0001
+mlp_language_early             6.76     0.0408       +0.0022 [+0.0005, +0.0039]        sí          -0.0010  (cambia de lado)
+block_language_layer00         0.88     0.0426       +0.0040 [+0.0010, +0.0070]        no          +0.0008
+block_language_layer01         0.88     0.0440       +0.0054 [+0.0020, +0.0086]        no          +0.0018
+
+Criterio 1, eficiencia (IC95 de celda − all-linear dentro de ±0.004):
+  eficientes que cumplen: ['mlp_language_early'] de ['block_language_early', 'block_language_mid', 'mlp_language_early', 'block_language_layer00', 'block_language_layer01']
+Criterio 2, bloque − control aleatorio a igual presupuesto (validación en A: −0.0006 visión y −0.0007 lenguaje; en B: +0.0132 y −0.0005):
+  visión   block_vision − random_block_vision: +0.0163 [+0.0121, +0.0204]
+  lenguaje block_language − random_block_language: +0.0007 [-0.0012, +0.0026]
+Criterio 3, replicación: ubicaciones mejores que all-linear (IC por debajo de 0): ninguna; peores en más de 0.004 con IC por encima: ['block_vision', 'attention_vision', 'mlp_vision']
+Criterio 4, controles de imagen: ganancia mínima sobre la barajada +0.0112 (attention_vision), sobre el blanco +0.0305 (all-linear); base: +0.0005 y +0.0385
+Criterio 5, transferencia: Spearman del error de validación con el del Test en las 14 ubicaciones +0.737; de la diferencia con all-linear +0.825; ubicaciones que cambian de lado respecto de all-linear: 7 de 13
+  mejor en validación: random_block_vision (0.0390), en Test 0.0391; mejor en Test: all-linear (0.0386)
+Criterio 6, referencias: constante 0.0584 (validación 0.0567); base 0.1841 (validación 0.1913); all-linear 0.0386 (validación 0.0405), 34 % por debajo de la constante
+

@@ -1,0 +1,8 @@
+# Etapa 2 de C: TARGETS ADAPTER SALIDA, una generación por línea; `base` = sin adapter
+data/pipeline/chaksu_C_all-linear_s43_real.csv base experiments/chaksu_C/base_all-linear_s43_real
+data/pipeline/chaksu_C_all-linear_s43_real.csv experiments/chaksu_verbalize_v1/block_language_s43 experiments/chaksu_C/lora_all-linear_s43_real
+data/pipeline/chaksu_C_all-linear_s43_shuffled.csv base experiments/chaksu_C/base_all-linear_s43_shuffled
+data/pipeline/chaksu_C_all-linear_s43_shuffled.csv experiments/chaksu_verbalize_v1/block_language_s43 experiments/chaksu_C/lora_all-linear_s43_shuffled
+data/pipeline/chaksu_C_all-linear_s43_blank.csv base experiments/chaksu_C/base_all-linear_s43_blank
+data/pipeline/chaksu_C_all-linear_s43_blank.csv experiments/chaksu_verbalize_v1/block_language_s43 experiments/chaksu_C/lora_all-linear_s43_blank
+data/pipeline/chaksu_C_stress.csv experiments/chaksu_verbalize_v1/block_language_s43 experiments/chaksu_C/lora_stress_s43

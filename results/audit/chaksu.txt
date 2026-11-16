@@ -1,0 +1,57 @@
+Chákṣu: 1345 imágenes
+published_split  test  train   All
+camera                            
+Bosch              41    104   145
+Forus              31     95   126
+Remidio           264    810  1074
+All               336   1009  1345
+
+Formato y tamaños por cámara:
+  Bosch    formatos {'JPEG': 145}; tamaños distintos 1; ancho 1920–1920, alto 1440–1440
+  Forus    formatos {'PNG': 126}; tamaños distintos 1; ancho 2048–2048, alto 1536–1536
+  Remidio  formatos {'JPEG': 1074}; tamaños distintos 2; ancho 1969–2448, alto 2166–3264
+
+Decisión de cada experto, valores tal como vienen en el dataset:
+  experto 1: {'NORMAL': 1096, 'GLAUCOMA SUSPECT': 249}
+  experto 2: {'NORMAL': 906, 'GLAUCOMA SUSPECT': 439}
+  experto 3: {'NORMAL': 1128, 'GLAUCOMA SUSPECT': 217}
+  experto 4: {'NORMAL': 1094, 'GLAUCOMA SUSPECT': 207, 'GLAUCOMA  SUSUPECT': 44}
+  experto 5: {'NORMAL': 1230, 'GLAUCOMA  SUSUPECT': 87, 'GLAUCOMA SUSPECT': 28}
+
+Fracción GLAUCOMA SUSPECT por experto: E1 0.185, E2 0.326, E3 0.161, E4 0.187, E5 0.086
+`Majority Decision` del dataset frente a la mayoría recalculada de los cinco: 1345 de 1345 coinciden
+Imágenes con 3 de 5 en un lado (la mayoría depende de un solo experto): 202
+
+Máscaras binarias de los expertos (3.0): 13450 de 13450 existen en disco; valores {0, 255} en todas
+  experto 1: 1345 imágenes con las dos máscaras; 4 máscaras guardadas en RGB; matriz de tamaño distinto al de la fotografía en 0
+      Disc de 1345: Height igual 634, a ≤1 1223; Width igual 629, a ≤1 1231; Area igual 1219, a ≤1 1219
+      Cup  de 1345: Height igual 784, a ≤1 1221; Width igual 749, a ≤1 1212; Area igual 1219, a ≤1 1219
+  experto 2: 1345 imágenes con las dos máscaras; 3 máscaras guardadas en RGB; matriz de tamaño distinto al de la fotografía en 0
+      Disc de 1345: Height igual 704, a ≤1 1343; Width igual 674, a ≤1 1342; Area igual 1344, a ≤1 1344
+      Cup  de 1345: Height igual 858, a ≤1 1339; Width igual 838, a ≤1 1323; Area igual 1344, a ≤1 1344
+  experto 3: 1345 imágenes con las dos máscaras; 2 máscaras guardadas en RGB; matriz de tamaño distinto al de la fotografía en 0
+      Disc de 1345: Height igual 676, a ≤1 1340; Width igual 679, a ≤1 1339; Area igual 1340, a ≤1 1340
+      Cup  de 1345: Height igual 927, a ≤1 1333; Width igual 882, a ≤1 1334; Area igual 1340, a ≤1 1340
+  experto 4: 1345 imágenes con las dos máscaras; 2 máscaras guardadas en RGB; matriz de tamaño distinto al de la fotografía en 0
+      Disc de 1345: Height igual 705, a ≤1 1345; Width igual 674, a ≤1 1344; Area igual 1344, a ≤1 1344
+      Cup  de 1345: Height igual 822, a ≤1 1343; Width igual 784, a ≤1 1339; Area igual 1345, a ≤1 1345
+  experto 5: 1345 imágenes con las dos máscaras; 1 máscaras guardadas en RGB; matriz de tamaño distinto al de la fotografía en 0
+      Disc de 1345: Height igual 1056, a ≤1 1345; Width igual 1055, a ≤1 1345; Area igual 1344, a ≤1 1344
+      Cup  de 1345: Height igual 1032, a ≤1 1343; Width igual 948, a ≤1 1339; Area igual 1344, a ≤1 1344
+
+Imágenes con el vCDR vacío en algún experto: ['remidio_IMG_3480']
+
+Techo interobservador sobre el vCDR del CSV (cinco expertos sobre las mismas imágenes):
+  test, tres cámaras       n=336                          Spearman mediana 0.571 rango [0.471, 0.670] | |dif| entre dos expertos 0.056 | desv. por imagen 0.055 (p90 0.096) | unanimidad en la decisión 0.637
+  test, Remidio            n=264                          Spearman mediana 0.569 rango [0.482, 0.697] | |dif| entre dos expertos 0.056 | desv. por imagen 0.055 (p90 0.096) | unanimidad en la decisión 0.633
+  test, Bosch              n=41                           Spearman mediana 0.390 rango [0.199, 0.540] | |dif| entre dos expertos 0.075 | desv. por imagen 0.072 (p90 0.098) | unanimidad en la decisión 0.683
+  test, Forus              n=31                           Spearman mediana 0.661 rango [0.582, 0.824] | |dif| entre dos expertos 0.051 | desv. por imagen 0.045 (p90 0.071) | unanimidad en la decisión 0.613
+  train, tres cámaras      n=1008  (sin 1 con vCDR vacío) Spearman mediana 0.567 rango [0.479, 0.664] | |dif| entre dos expertos 0.050 | desv. por imagen 0.053 (p90 0.090) | unanimidad en la decisión 0.567
+  train, Remidio           n=809   (sin 1 con vCDR vacío) Spearman mediana 0.563 rango [0.490, 0.670] | |dif| entre dos expertos 0.049 | desv. por imagen 0.052 (p90 0.087) | unanimidad en la decisión 0.574
+  train, Bosch             n=104                          Spearman mediana 0.513 rango [0.433, 0.686] | |dif| entre dos expertos 0.064 | desv. por imagen 0.062 (p90 0.099) | unanimidad en la decisión 0.500
+  train, Forus             n=95                           Spearman mediana 0.624 rango [0.455, 0.684] | |dif| entre dos expertos 0.054 | desv. por imagen 0.054 (p90 0.095) | unanimidad en la decisión 0.589
+  todas                    n=1344  (sin 1 con vCDR vacío) Spearman mediana 0.579 rango [0.472, 0.663] | |dif| entre dos expertos 0.052 | desv. por imagen 0.054 (p90 0.091) | unanimidad en la decisión 0.585
+
+Un experto frente al consenso (todas las imágenes con los cinco vCDR):
+  frente a la mediana de los otros cuatro: n=1344 imágenes x 5 expertos; |error| medio 0.055, mediana 0.044; Spearman mediana 0.673; dentro de 0.056: 0.603
+  frente a la fusión Majority (incluye al experto): n=1344 imágenes x 5 expertos; |error| medio 0.044, mediana 0.033; Spearman mediana 0.785; dentro de 0.056: 0.711

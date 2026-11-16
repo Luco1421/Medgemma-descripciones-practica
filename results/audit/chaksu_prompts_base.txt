@@ -1,0 +1,28 @@
+SELECCIÓN (171 imágenes de entrenamiento, imagen correcta; constante 0.5200)
+  P0   error del vCDR 0.0562   respuestas ilegibles 0   longitud 327 caracteres
+  P0b  error del vCDR 0.0623   respuestas ilegibles 0   longitud 340 caracteres
+  P0c  error del vCDR 0.0562   respuestas ilegibles 0   longitud 346 caracteres
+  P1   error del vCDR 0.1583   respuestas ilegibles 0   longitud 583 caracteres
+  P2   error del vCDR 0.1874   respuestas ilegibles 0   longitud 773 caracteres
+  P3   error del vCDR 0.0555   respuestas ilegibles 6   longitud 629 caracteres
+  P4   error del vCDR 0.0557   respuestas ilegibles 171   longitud 1075 caracteres
+  P5   error del vCDR 0.0522   respuestas ilegibles 0   longitud 327 caracteres
+  mejor 0.0522; dentro de 0.004: ['P0', 'P0c', 'P3', 'P4', 'P5']; elegido (el más corto): P0
+
+VALIDACIÓN (171 imágenes, tres controles). Referencia: `all-linear` de A, error 0.0403 (media de 3 semillas)
+        error  barajada  blanco  formato   sens  espec   diferencia con all-linear [IC95]
+P0         0.0615   -0.0005 -0.0022    1.000  0.000  1.000   +0.0212 [+0.0140, +0.0289]   <- elegido
+P0b        0.0711   +0.0024 -0.0118    1.000  0.000  1.000   +0.0308 [+0.0236, +0.0387]
+P0c        0.0594   +0.0000 +0.0000    1.000  0.000  1.000   +0.0191 [+0.0119, +0.0269]
+P1         0.1632   +0.0032 -0.1038    1.000  0.000  1.000   +0.1229 [+0.0983, +0.1452]
+P2         0.1975   +0.0019 -0.1407    0.994  0.130  0.973   +0.1572 [+0.1371, +0.1732]
+P3         0.0569   +0.0022 -0.0002    0.965  0.000  0.973   +0.0166 [+0.0096, +0.0237]
+P4         0.0567   +0.0000 +0.0000    0.000  0.000  0.000   +0.0164 [+0.0095, +0.0234]
+P5         0.0645   +0.0079 -0.0070    1.000  0.261  0.932   +0.0242 [+0.0133, +0.0373]
+P4_t1024   0.1231   -0.0001 -0.0637    0.754  0.174  0.696   +0.0828 [+0.0632, +0.1025]
+
+Ruido por redacción: error de P0, P0b y P0c [np.float64(0.0615), np.float64(0.0711), np.float64(0.0594)]; rango 0.0118
+Elegido (P0) − P0: +0.0000 [+0.0000, +0.0000]
+Elegido (P0) − all-linear de A: +0.0212 [+0.0140, +0.0289]  => «adaptar supera a mejorar el prompt, frente a este conjunto»: se sostiene (criterio: límite inferior > +0.004)
+
+Comprobación: P0 reproduce el modelo base de A en 171 de 171 respuestas idénticas

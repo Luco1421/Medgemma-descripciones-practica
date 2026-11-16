@@ -1,0 +1,43 @@
+MÉTRICAS DE SUPERFICIE SOBRE B Y SOBRE LA ETAPA 2 DE C (171 imágenes de validación, media de tres semillas, imagen real)
+Spearman por imagen entre la métrica (media de las semillas) y el error del vCDR del texto (media de las semillas); más negativo = la métrica baja cuando el vCDR falla
+
+B, all-linear: error del vCDR 0.0405
+  BLEU-4                    23.776   Spearman con el error por imagen +0.056
+  ROUGE-L                    0.550   Spearman con el error por imagen +0.061
+  BERTScore-roberta          0.923   Spearman con el error por imagen +0.018
+  BERTScore-ClinicalBERT     0.815   Spearman con el error por imagen +0.111
+  SBERT-mpnet                0.817   Spearman con el error por imagen +0.028
+  MedCPT                     0.903   Spearman con el error por imagen +0.125
+
+C, etapa 2 base, solo texto: error del vCDR 0.0403
+  BLEU-4                     6.437   Spearman con el error por imagen +0.171
+  ROUGE-L                    0.377   Spearman con el error por imagen +0.076
+  BERTScore-roberta          0.905   Spearman con el error por imagen +0.037
+  BERTScore-ClinicalBERT     0.743   Spearman con el error por imagen +0.124
+  SBERT-mpnet                0.784   Spearman con el error por imagen +0.130
+  MedCPT                     0.877   Spearman con el error por imagen +0.022
+
+C, etapa 2 LoRA, solo texto: error del vCDR 0.0403
+  BLEU-4                    25.915   Spearman con el error por imagen +0.024
+  ROUGE-L                    0.552   Spearman con el error por imagen -0.013
+  BERTScore-roberta          0.924   Spearman con el error por imagen -0.023
+  BERTScore-ClinicalBERT     0.813   Spearman con el error por imagen +0.018
+  SBERT-mpnet                0.810   Spearman con el error por imagen +0.074
+  MedCPT                     0.895   Spearman con el error por imagen +0.060
+
+C, etapa 2 base, con imagen: error del vCDR 0.0403
+  BLEU-4                     6.818   Spearman con el error por imagen -0.179
+  ROUGE-L                    0.435   Spearman con el error por imagen -0.167
+  BERTScore-roberta          0.907   Spearman con el error por imagen -0.203
+  BERTScore-ClinicalBERT     0.747   Spearman con el error por imagen -0.125
+  SBERT-mpnet                0.791   Spearman con el error por imagen -0.084
+  MedCPT                     0.887   Spearman con el error por imagen -0.100
+
+C, etapa 2 LoRA, con imagen: error del vCDR 0.0403
+  BLEU-4                    23.158   Spearman con el error por imagen -0.114
+  ROUGE-L                    0.556   Spearman con el error por imagen -0.091
+  BERTScore-roberta          0.921   Spearman con el error por imagen -0.060
+  BERTScore-ClinicalBERT     0.815   Spearman con el error por imagen -0.002
+  SBERT-mpnet                0.813   Spearman con el error por imagen -0.043
+  MedCPT                     0.887   Spearman con el error por imagen -0.025
+

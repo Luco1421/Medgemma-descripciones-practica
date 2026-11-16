@@ -1,0 +1,3 @@
+# Semillas 43 y 44 del piloto de cadena de pensamiento (la 42 está en chaksu_pilotos.txt). Se lanza con MAX_NEW_TOKENS=512.
+chaksu cot_v1 all-linear 43
+chaksu cot_v1 all-linear 44

@@ -1,0 +1,5 @@
+# Pilotos de la configuración C y de la cadena de pensamiento (semilla 42). Formato: DATASET RECETA CAPAS SEMILLA
+# Cadena de pensamiento con LoRA en todo el modelo: se compara con all-linear de A y de B.
+chaksu cot_v1 all-linear 42
+# Etapa de redacción con imagen (los campos van en el prompt), LoRA en los bloques de lenguaje.
+chaksu verbalize_img_v1 block_language 42

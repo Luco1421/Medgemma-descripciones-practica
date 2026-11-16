@@ -1,0 +1,2 @@
+# P4 con 1024 tokens (análisis de sensibilidad); lanzar con MAX_NEW_TOKENS=1024
+data/prompts/chaksu_A_P4.txt data/splits/chaksu_seed42_seleccion.csv validation - real,shuffled,blank experiments/chaksu_prompts_A/P4_t1024/validation
