@@ -1,6 +1,6 @@
 # Prototipo
 
-Una fotografía de fondo de ojo entra y sale una descripción clínica de una o dos frases, con MedGemma (`google/medgemma-1.5-4b-it`) y los adaptadores LoRA del estudio. La lógica está en `prototipo.py` (importable); `prototipo.ipynb` solo carga el modelo, muestra la interfaz (ipywidgets) y trae un ejemplo ejecutable.
+Una fotografía de fondo de ojo entra y sale una descripción clínica de una o dos frases, con MedGemma (`google/medgemma-1.5-4b-it`) y los adaptadores LoRA del estudio. Todo el prototipo es `prototipo.ipynb`: la lógica (carga, inferencia, lectura de campos, error frente a la referencia), la interfaz (ipywidgets) y un ejemplo ejecutable están en sus celdas, en orden y explicadas. Solo reutiliza los instrumentos del estudio (`scripts.model`, `scripts.eval`, `scripts.studies.pipeline`) para que muestre lo que se evaluó.
 
 **No es un sistema clínico.** La fidelidad del texto es a los campos medidos (vCDR, hCDR, decisión), no a la imagen. La interfaz lo repite en un aviso fijo.
 
@@ -15,7 +15,7 @@ Con un solo modelo en memoria se montan los adaptadores y `set_adapter` elige cu
 
 ### Adaptadores del selector
 
-Semilla de entrenamiento 42 (se cambia en la celda de carga). Error absoluto del vCDR: media ± desviación de las tres semillas, en la validación de Chákṣu (171 imágenes) y en el Test (reservado), leído de `results/grids/*/results.csv` y `results_test.csv`.
+Semilla de entrenamiento 42 (se cambia con `SEED` en la celda de carga). Error absoluto del vCDR: media ± desviación de las tres semillas, en la validación de Chákṣu (171 imágenes) y en el Test (reservado), leído de `results/grids/*/results.csv` y `results_test.csv`.
 
 | Opción | Ubicación | Parámetros entrenables | Error vCDR Test | Error vCDR validación |
 |---|---|---|---|---|
@@ -44,7 +44,7 @@ Criterio de elección (cifras de `results_test.csv` de la receta A, 14 celdas fi
         ssh -J <usuario>@<login-node> -L 8899:127.0.0.1:8899 <usuario>@<nodo>
 
    Requiere que tu clave pública esté autorizada también en el nodo (con `-J` el cliente usa su clave en los dos saltos); desde el login node, sin clave propia, `ssh <nodo>` da `Permission denied`. Con otro puerto: `PORT=9000 sbatch slurm/jupyter_template.slurm` y se cambia en el `-L`. Se abre en el navegador la URL del `.err`, sustituyendo el host por `localhost`.
-4. Se abre `prototype/prototipo.ipynb`, kernel `ia`. Se ejecuta la celda 1 (carga; unos minutos) y la celda 2 (muestra la interfaz).
+4. Se abre `prototype/prototipo.ipynb`, kernel `ia`. Se ejecutan las celdas de definiciones, la celda de carga (sección 11; unos minutos) y la de la interfaz (sección 12).
 5. En la interfaz: se elige el adaptador, se marca si se quiere el modelo base al lado, y se elige el modo:
    - **Imagen con referencia conocida.** Seis ejemplos de la validación de Chákṣu (por cámara, la primera imagen normal y la primera sospechosa, por id) o cualquier imagen de validación por cámara. Tras el resultado se muestra la referencia de los expertos y el error del vCDR y del hCDR.
    - **Imagen propia, sin referencia.** Se sube un JPG, PNG o TIFF (de un TIFF se lee la primera página; se espera 8 bits por canal). El resultado no muestra ninguna referencia. Opcional: marcar «anotaciones de un oftalmólogo» (vCDR, hCDR, decisión) para que la etapa 2 los redacte sin pasar por la imagen (no aplica a la opción B), o «referencia propia» para comparar el resultado con lo que escribas.

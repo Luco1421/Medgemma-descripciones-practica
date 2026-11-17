@@ -16,7 +16,7 @@ scripts/      instrumentos del estudio; se ejecutan desde la raíz con `python -
   studies/    experimentos que combinan los anteriores: baseline_prompts (prompting del base), pipeline (config. C), external
   analysis/   predictores de capas y reportes: probe (sondas), rgn (Auto-RGN), grid_analysis, finalists, test_report, figures, external_report
 slurm/        plantillas de job; `batch_template.slurm` recorre una lista de `runs/`
-prototype/    prototipo (`prototipo.py` + cuaderno + interfaz de ipywidgets): imagen de Chákṣu con referencia o imagen propia sin ella → descripción clínica, con selector de adaptador; `prototype/README.md` dice cómo lanzarlo
+prototype/    prototipo (un solo cuaderno con toda la lógica y la interfaz de ipywidgets): imagen de Chákṣu con referencia o imagen propia sin ella → descripción clínica, con selector de adaptador; `prototype/README.md` dice cómo lanzarlo
 runs/         una corrida por línea (`DATASET RECETA CAPAS SEMILLA`)
 data/         datos derivados del dataset: manifests, splits, targets, prompts, stage2 (entradas de la etapa 2 de C)
 results/      lo que se lee y se cita: grids/ (una tabla por rejilla), figures/, rgn/, probes/, audit/ (informes)
@@ -55,7 +55,7 @@ python -m scripts.eval.evaluate --predictions experiments/<corrida>/pred_real.js
     --compare experiments/<corrida>/pred_shuffled.jsonl experiments/<corrida>/pred_blank.jsonl
 ```
 
-El prototipo (`prototype/prototipo.py`, interfaz en `prototype/prototipo.ipynb`) se verifica de punta a punta con `sbatch slurm/notebook_template.slurm`, o se usa de forma interactiva con `slurm/jupyter_template.slurm` (ver `prototype/README.md`).
+El prototipo (`prototype/prototipo.ipynb`, con toda la lógica y la interfaz) se verifica de punta a punta con `sbatch slurm/notebook_template.slurm`, o se usa de forma interactiva con `slurm/jupyter_template.slurm` (ver `prototype/README.md`).
 
 Cada corrida de entrenamiento escribe un `run_config.json` con el modelo, el commit, los datos, los módulos
 adaptados, los hiperparámetros y la semilla.

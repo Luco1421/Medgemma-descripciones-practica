@@ -10,7 +10,7 @@
 #SBATCH --exclude=nukwa-00.cnca,nukwa-01.cnca,nukwa-02.cnca,nukwa-03.cnca
 #SBATCH --propagate=NONE
 
-# Ejecuta el prototipo (prototype/prototipo.ipynb) de punta a punta con nbconvert y deja las salidas en el mismo
+# Ejecuta el prototipo (prototype/prototipo.ipynb, que contiene toda su lógica) de punta a punta con nbconvert y deja las salidas en el mismo
 # cuaderno, sin el estado de los widgets (que lo engordaría varios MB). Construye la interfaz y llama a las funciones de los dos modos desde
 # código, sin navegador (con imágenes de validación de Chákṣu, una de ellas tratada como desconocida), y comprueba
 # que el selector cambia de adaptador.
