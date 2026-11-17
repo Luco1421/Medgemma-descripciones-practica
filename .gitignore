@@ -22,7 +22,3 @@ data/
 results/audit/*.csv
 results/normalized/
 results/probes/*.npz
-
-# Prueba de funcionamiento del prototipo con imágenes de terceros (REFUGE, JustRAIGS): solo local.
-prototype/prototipo_externas*.ipynb
-slurm/notebook_externas.slurm

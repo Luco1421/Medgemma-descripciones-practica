@@ -19,6 +19,7 @@ from dataclasses import dataclass
 from pathlib import Path
 
 import ipywidgets as widgets
+import transformers
 from peft import PeftModel
 from PIL import Image, ImageOps
 
@@ -107,7 +108,14 @@ def load_prototype(seed=42):
     validation = [r for r in read_csv(REPO / "data" / "targets" / "chaksu__prose_v1.csv") if split_of[r["image_id"]] == "validation"]
     assert validation, "la partición validation está vacía"
 
+    # Ruido de la librería, no de los resultados: avisos informativos (procesador de imagen lento, etc.) y barras de carga.
+    transformers.utils.logging.set_verbosity_error()
+    transformers.utils.logging.disable_progress_bar()
     processor, model = load_medgemma()
+    # `generate` sin pad_token_id lo toma del eos y avisa en cada llamada; se fija el mismo valor una vez. Con una sola
+    # secuencia por llamada no hay relleno, así que el valor no altera la salida.
+    eos = model.generation_config.eos_token_id
+    model.generation_config.pad_token_id = eos[0] if isinstance(eos, list) else eos
     options = list(OPTIONS)
     model = PeftModel.from_pretrained(model, adapter_dir(options[0], seed), adapter_name=options[0])
     for option in options[1:]:
@@ -197,6 +205,24 @@ def reference_error(fields, reference):
     out = {k: None if fields[k] is None else abs(float(fields[k]) - float(reference[k])) for k in NUMERIC}
     out["decision"] = None if fields["decision"] is None else fields["decision"] == reference["decision"]
     return out
+
+
+def describe(result, reference=None):
+    """Un resultado en texto plano: campos, texto, tiempo y, si hay referencia ({vcdr, hcdr, decision}), el error del vCDR."""
+    fields = result["fields"]
+    if fields is None:
+        return f"campos no legibles; salida cruda: {result['raw_stage1']!r}"
+    shown = " · ".join("%s %s" % (k, "no legible" if v is None else f"{float(v):.2f}" if k in NUMERIC else v) for k, v in fields.items())
+    lines = [f"campos (desde {result['source']}): {shown}"]
+    if result["text"]:
+        lines.append(f"texto: {result['text']}")
+    lines.append("tiempo: " + (", ".join(f"{k} {v:.1f} s" for k, v in result["seconds"].items()) or "sin generación") +
+                 f" (total {sum(result['seconds'].values()):.1f} s)")
+    if reference:
+        error = reference_error(fields, reference)
+        lines.append(f"referencia: vCDR {float(reference['vcdr']):.2f} · hCDR {float(reference['hcdr']):.2f} · {reference['decision']}; "
+                     f"error del vCDR {number_html(error['vcdr'], 3)}, decisión {'coincide' if error['decision'] else 'no coincide'}")
+    return "\n".join(lines)
 
 
 def decode_image(name, content):

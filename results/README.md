@@ -41,6 +41,6 @@ nada se edita a mano. Las cifras que se citen deben salir de estos archivos.
 | `figures/pooling_sondas.png`, `.pdf` | Sondas de la torre de visión según el resumen de los parches | `scripts.analysis.figures pooling` |
 | `audit/costo_beneficio.txt`, `.csv`; `figures/costo_beneficio.png`, `.pdf` | Costo-beneficio de las 88 ubicaciones frente a all-linear: parámetros, tiempo de entrenamiento, MiB del adaptador, error en validación y Test, fracción de la mejora conservada y frontera de Pareto | `scripts.analysis.costbenefit` |
 
-El prototipo (`prototype/prototipo.ipynb`, ejecutado en `prototype/prototipo_ejecutado.ipynb`) es una demostración sobre imágenes de validación de Chákṣu y una imagen tratada como desconocida; no produce cifras del estudio. Las cifras que muestra para cada adaptador se leen de `grids/*/results.csv` y `results_test.csv`.
+El prototipo (`prototype/prototipo.ipynb`, que se guarda ejecutado) es una demostración sobre imágenes de validación de Chákṣu y una imagen tratada como desconocida; no produce cifras del estudio. Las cifras que muestra para cada adaptador se leen de `grids/*/results.csv` y `results_test.csv`.
 
 Lo que no se versiona: `audit/*.csv` (medidas por imagen de datasets de terceros), `normalized/` (predicciones con la referencia) y `probes/*.npz` (activaciones, cientos de MB).

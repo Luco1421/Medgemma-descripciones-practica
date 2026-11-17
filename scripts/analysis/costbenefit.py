@@ -10,7 +10,7 @@ Fracción de la mejora conservada = (error de la constante - error de la celda) 
 1 es igualar a all-linear, 0 no mejorar al predictor constante, y es negativa si empeora. La constante de cada
 partición sale de la fila `constant` de la tabla. Error adicional relativo = error de la celda / error de all-linear - 1.
 
-Escribe `results/audit/costo_beneficio.{txt,csv}` y `results/figures/costo_beneficio.{png,pdf}`.
+Escribe `results/audit/costo_beneficio.{txt,csv}` `results/figures/costo_beneficio.{png,pdf}` (tres paneles), `costo_beneficio_articulo.{png,pdf}` (cuerpo del artículo) y `tiempo_parametros.{png,pdf}`.
 """
 
 import json
@@ -160,6 +160,46 @@ def figure(all_cells):
     save(fig, "costo_beneficio")
 
 
+def figure_article(all_cells):
+    """Versión para el cuerpo del artículo: error frente a parámetros (receta A, validación), una sola figura a ancho de columna,
+    con la fracción conservada anotada solo en ubicaciones destacadas; y el tiempo frente a parámetros como figura aparte."""
+    d = all_cells[all_cells.recipe == "A"]
+    ref, c = d.loc["all-linear", "val_error"], d.val_constant.iloc[0]
+    with plt.rc_context({"font.size": 8, "axes.labelsize": 8, "legend.fontsize": 7.5}):
+        fig, ax = plt.subplots(figsize=(5.6, 3.4), layout="constrained")
+        for fam, g in d.groupby("family"):
+            ax.scatter(g.params / 1e6, g.val_error, s=22, color=TOWER_COLORS[fam], marker=TOWER_MARKERS[fam], alpha=0.85, zorder=3,
+                       label={"vision": "visión", "language": "lenguaje", "all-linear": "all-linear", "random": "control aleatorio"}[fam])
+        ax.axhline(ref, color="black", lw=1)
+        ax.axhline(c, color="#777777", ls="--", lw=1)
+        ax.text(3.0, c + 0.0004, "predictor constante", fontsize=7.5, color="#555555")
+        ax.text(0.31, ref + 0.0004, "all-linear", fontsize=7.5)
+        ax.set_xscale("log")
+        ax.set_ylim(0.0345, 0.063)
+        marks = {"block_language_layer01": ("capa 1 de lenguaje", (0.17, 0.45)), "mlp_vision": ("MLP de visión", (0.36, 0.05)),
+                 "block_vision": ("bloque de visión", (0.60, 0.05)), "random_block_vision": ("control aleatorio", (0.58, 0.37)),
+                 "block_language": ("bloque de lenguaje", (0.76, 0.50))}
+        for cell, (name, pos) in marks.items():
+            r = d.loc[cell]
+            ax.annotate(f"{name}: {100 * r.val_kept:.0f}\u2009%", (r.params / 1e6, r.val_error), xytext=pos, textcoords="axes fraction", fontsize=7.5,
+                        arrowprops=dict(arrowstyle="-", lw=0.6, color="#444444"))
+        ax.set_xlabel("parámetros entrenables (millones, escala logarítmica)")
+        ax.set_ylabel("error del vCDR en validación (receta A)")
+        ax.legend(frameon=False, loc="upper right", ncol=2)
+        save(fig, "costo_beneficio_articulo")
+        fig, ax = plt.subplots(figsize=(3.4, 2.8), layout="constrained")
+        for label, marker in zip(RECIPES, ("o", "^")):
+            g = all_cells[all_cells.recipe == label]
+            for fam, h in g.groupby("family"):
+                ax.scatter(h.pct_params, h.pct_time, s=14, color=TOWER_COLORS[fam], marker=marker, alpha=0.8)
+        ax.plot([0.3, 100], [0.3, 100], color="#999999", ls=":", lw=1)
+        ax.set_xscale("log")
+        ax.set_ylim(0, 105)
+        ax.set_xlabel("parámetros (% de all-linear)")
+        ax.set_ylabel("tiempo de entrenamiento (% de all-linear)")
+        save(fig, "tiempo_parametros")
+
+
 def main():
     all_cells = pd.concat([build(label, recipe) for label, recipe in RECIPES.items()])
     all_cells.index.name = "cell"
@@ -168,6 +208,7 @@ def main():
     open(f"{AUDIT}/costo_beneficio.txt", "w").write(text)
     print(text)
     figure(all_cells)
+    figure_article(all_cells)
 
 
 if __name__ == "__main__":

@@ -10,8 +10,8 @@
 #SBATCH --exclude=nukwa-00.cnca,nukwa-01.cnca,nukwa-02.cnca,nukwa-03.cnca
 #SBATCH --propagate=NONE
 
-# Ejecuta el prototipo (prototype/prototipo.ipynb) de punta a punta con nbconvert y guarda el cuaderno con sus
-# salidas en prototype/prototipo_ejecutado.ipynb. Construye la interfaz y llama a las funciones de los dos modos desde
+# Ejecuta el prototipo (prototype/prototipo.ipynb) de punta a punta con nbconvert y deja las salidas en el mismo
+# cuaderno, sin el estado de los widgets (que lo engordaría varios MB). Construye la interfaz y llama a las funciones de los dos modos desde
 # código, sin navegador (con imágenes de validación de Chákṣu, una de ellas tratada como desconocida), y comprueba
 # que el selector cambia de adaptador.
 # Uso (desde la raíz del repo; `experiments/logs/` tiene que existir):
@@ -28,6 +28,6 @@ export HF_HUB_CACHE="/data/$USER/models/huggingface/hub"  # pesos: fuera de app_
 export XDG_CACHE_HOME="$CACHE_ROOT/cache"
 
 cd "$REPO"
-"$BIN/jupyter-nbconvert" --to notebook --execute prototype/prototipo.ipynb \
-  --output prototipo_ejecutado.ipynb --output-dir prototype \
+"$BIN/jupyter-nbconvert" --to notebook --execute --inplace prototype/prototipo.ipynb \
+  --ExecutePreprocessor.store_widget_state=False \
   --ExecutePreprocessor.timeout=3000 --ExecutePreprocessor.kernel_name=ia

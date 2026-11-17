@@ -57,7 +57,7 @@ Una imagen con campos ilegibles (la etapa 1 no dio los tres campos) se informa c
 
     sbatch slurm/notebook_template.slurm
 
-Ejecuta el cuaderno de punta a punta con `jupyter nbconvert` y guarda `prototype/prototipo_ejecutado.ipynb`. Construye la interfaz y llama a lo que hacen los botones: dos imágenes de validación de Chákṣu con referencia, una imagen de validación subida como archivo y tratada como desconocida (se comprueba que el resultado no contiene referencia), el camino con anotaciones y referencia propia, y un recorrido de las cuatro opciones del selector comprobando el adaptador activo y que las salidas no son todas iguales.
+Ejecuta `prototype/prototipo.ipynb` de punta a punta con `jupyter nbconvert --execute --inplace` y deja las salidas en el mismo cuaderno, sin el estado de los widgets. Construye la interfaz y llama a lo que hacen los botones: una imagen de validación de Chákṣu con referencia, una imagen de validación subida como archivo y tratada como desconocida (se comprueba que el resultado no contiene referencia), el camino con anotaciones, y un recorrido de las cuatro opciones del selector comprobando el adaptador activo y que las salidas no son todas iguales.
 
 ## Límites
 
