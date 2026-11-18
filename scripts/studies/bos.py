@@ -3,8 +3,8 @@
     python -m scripts.studies.bos
 
 Compara, para `all-linear` (A, validación, semillas 42, 43 y 44), el error del vCDR de la generación estándar
-(`validation/`) con el de la generación con un segundo <bos> (`validation_bos2/`, `DUP_BOS=1` en
-`slurm/inference_template.slurm`), que reproduce la entrada del entrenamiento. La diferencia se calcula por imagen
+(`validation/`) con el de la generación con un segundo <bos> (`validation_bos2/`, generado con
+`lora.py generate --duplicate-bos`), que reproduce la entrada del entrenamiento. La diferencia se calcula por imagen
 sobre el promedio de las tres semillas, con el intervalo por bloques de captura de `scripts.eval.results`.
 """
 

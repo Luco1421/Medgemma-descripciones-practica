@@ -7,7 +7,7 @@
 y, para cada semilla y control de imagen, escribe en `data/stage2/` una copia de los targets de `verbalize_v1` en la que los campos de
 las imágenes de validación (`vcdr`, `hcdr`, `decision`: lo que entra en el prompt de la etapa 2) son los PREDICHOS por la etapa 1; los de
 referencia quedan en `gold_vcdr`, `gold_hcdr`, `gold_decision`. Las demás particiones no se usan. Escribe también, en `runs/`, la lista de
-generaciones de la etapa 2 (una por línea: TARGETS ADAPTER SALIDA) que recorre `slurm/pipeline_template.slurm`. La prueba de estrés usa los campos
+generaciones de la etapa 2 (una por línea: TARGETS ADAPTER SALIDA) que cada trabajo de generación recorre. La prueba de estrés usa los campos
 de referencia con la decisión invertida. Una predicción de la etapa 1 sin los tres campos válidos aborta: la etapa 2 no tendría entrada.
 
 `prepare --recipe verbalize_img_v1` prepara la variante con la imagen real en la etapa 2 (solo imagen real, sin prueba de estrés) y `report_img` la compara con la

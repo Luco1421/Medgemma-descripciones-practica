@@ -21,11 +21,11 @@ nada se edita a mano. Las cifras que se citen deben salir de estos archivos.
 | `audit/chaksu_superficie_C.txt` | Métricas de superficie de B y de la etapa 2 de C; GPU | `scripts.eval.surface --stage2` |
 | `audit/mmodir129_externa.txt`, `.csv` | Validación externa en MM-ODIR-129 | `scripts.analysis.external_report` |
 | `audit/recursos.txt` | Recursos usados: entrenamientos y horas de GPU, almacenamiento, memoria por adaptador y proyección de una calibración por ubicación | `scripts.analysis.resources` |
-| `audit/latencia.txt`, `.csv` | Latencia de inferencia por imagen de A, B, C (redactor LoRA y base) y el modelo base: media, desviación, mediana, p95, tokens y memoria pico, 40 imágenes de validación en una L40S, dos pasadas | `scripts.analysis.latency` (`slurm/latency_template.slurm`) |
-| `audit/chaksu_bos.txt` | Efecto del `<bos>` duplicado en la generación de `all-linear` | `scripts.studies.bos` (tras `DUP_BOS=1 IMAGE_MODES=real sbatch slurm/inference_template.slurm...`) |
-| `probes/chaksu_json_v1_sondas.txt`, `.csv` | Sondas lineales por capa | `slurm/probe_template.slurm` |
-| `probes/chaksu_json_v1_pooling.txt`, `.csv` | Sondas de la torre de visión con cuatro resúmenes de los parches (promedio, máximo, gradiente morfológico, su pico); GPU | `slurm/pooling_template.slurm` |
-| `rgn/chaksu_*.csv` | Norma de gradiente relativa por bloque | `slurm/rgn_template.slurm` |
+| `audit/latencia.txt`, `.csv` | Latencia de inferencia por imagen de A, B, C (redactor LoRA y base) y el modelo base: media, desviación, mediana, p95, tokens y memoria pico, 40 imágenes de validación en una L40S, dos pasadas | `scripts.analysis.latency` |
+| `audit/chaksu_bos.txt` | Efecto del `<bos>` duplicado en la generación de `all-linear` | `scripts.studies.bos` (tras generar con `lora.py generate --duplicate-bos --image-modes real`) |
+| `probes/chaksu_json_v1_sondas.txt`, `.csv` | Sondas lineales por capa | `scripts.analysis.probe extract` (GPU) y `fit` |
+| `probes/chaksu_json_v1_pooling.txt`, `.csv` | Sondas de la torre de visión con cuatro resúmenes de los parches (promedio, máximo, gradiente morfológico, su pico); GPU | `scripts.analysis.probe pooling` |
+| `rgn/chaksu_*.csv` | Norma de gradiente relativa por bloque | `scripts.analysis.rgn` |
 | `figures/` | Figuras para el informe y el paper | `scripts.analysis.figures` |
 | `figures/configuraciones.png`, `.pdf` | Esquema de las configuraciones A, B y C | `scripts.analysis.figures` |
 | `figures/particion_camaras.png`, `.pdf` | Imágenes por partición y cámara, con la prevalencia de «sospechoso» | `scripts.analysis.figures` |

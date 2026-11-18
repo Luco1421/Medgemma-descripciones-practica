@@ -106,7 +106,7 @@ def main():
     p(f"results/: {gib(du('results'))}")
     probes = glob.glob("results/probes/*.npz")
     p(f"Activaciones de sondas (results/probes/*.npz): {len(probes)} archivos, {gib(sum(os.stat(f).st_size for f in probes))}")
-    p(f"Código: scripts/ {du('scripts') / 1024 ** 2:.2f} MiB, slurm/ {du('slurm') / 1024 ** 2:.2f} MiB, "
+    p(f"Código: scripts/ {du('scripts') / 1024 ** 2:.2f} MiB, "
       f"runs/ {du('runs') / 1024 ** 2:.2f} MiB")
     tracked = int(run("git ls-files -z | xargs -0 du -cb | tail -1").split()[0])
     p(f"Repositorio versionado: archivos rastreados (git ls-files, du -cb) {tracked / 1024 ** 2:.2f} MiB; "

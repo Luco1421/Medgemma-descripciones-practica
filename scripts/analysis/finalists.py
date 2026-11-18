@@ -3,8 +3,8 @@
     python -m scripts.analysis.finalists
 
 Es la única fuente de qué celdas se abren en el Test. Escribe, para cada receta, `runs/chaksu_<receta>_finalistas.txt` (el formato de
-`scripts.eval.results`, con `--split test`) y `runs/chaksu_test_<n>.txt`, las listas de generación que recorre `slurm/test_template.slurm`
-(`RECETA CARPETA_DE_LA_CORRIDA`, repartidas por turnos entre cuatro jobs; el modelo base va primero).
+`scripts.eval.results`, con `--split test`) y `runs/chaksu_test_<n>.txt`, las listas de generación del Test
+(`RECETA CARPETA_DE_LA_CORRIDA`, una por línea, repartidas por turnos entre cuatro jobs; el modelo base va primero).
 
 Criterio de la lista, fijado antes de abrir el Test:
   - a priori: `all-linear`, el bloque, la atención y el MLP de cada torre, y los dos controles aleatorios a igual presupuesto;

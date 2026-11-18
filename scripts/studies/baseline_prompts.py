@@ -8,7 +8,7 @@ ninguno lleva información de un caso concreto: el mismo texto para todas las im
 
 `write` crea, en `data/prompts/`, un archivo por prompt y los ejemplos de P5 (4 imágenes de entrenamiento con su respuesta); en
 `data/splits/`, una partición derivada donde 171 imágenes de entrenamiento elegidas al azar (semilla 0) pasan a llamarse `selection`; y en
-`runs/`, las listas de generación que recorre `slurm/prompts_template.slurm`. Los ejemplos de P5 salen de las imágenes de entrenamiento que no
+`runs/`, las listas de generación (`PROMPT SPLITS PARTICION EJEMPLOS CONTROLES SALIDA` por línea, para `lora.py generate`). Los ejemplos de P5 salen de las imágenes de entrenamiento que no
 están en `selection`.
 
 `report` elige el prompt de menor error del vCDR en `selection` (imagen correcta); si dos difieren menos de 0.004 gana el más corto. Luego

@@ -22,3 +22,7 @@ data/
 results/audit/*.csv
 results/normalized/
 results/probes/*.npz
+
+# Material local: adaptadores (se entregan por solicitud al autor) y plantillas de trabajos
+adapters/
+slurm/

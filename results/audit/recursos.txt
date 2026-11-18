@@ -56,7 +56,7 @@ Predicciones crudas (pred_*.jsonl): 2275 archivos, 0.32 GiB
 data/: 0.01 GiB
 results/: 0.88 GiB
 Activaciones de sondas (results/probes/*.npz): 2 archivos, 0.75 GiB
-Código: scripts/ 0.55 MiB, slurm/ 0.06 MiB, runs/ 0.08 MiB
+Código: scripts/ 0.55 MiB, runs/ 0.08 MiB
 Repositorio versionado: archivos rastreados (git ls-files, du -cb) 10.29 MiB; git count-objects -vH:
   count: 464
   size: 17.30 MiB

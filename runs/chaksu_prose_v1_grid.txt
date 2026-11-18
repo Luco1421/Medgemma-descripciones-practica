@@ -2,8 +2,8 @@
 # Celdas: all-linear, 2 controles aleatorios a igual presupuesto, 6 por torre y módulo, 18 por tercio de
 # profundidad, y un bloque a la vez en las 27 capas de visión y las 34 de lenguaje. Cada celda ocupa tres líneas
 # seguidas (una por semilla). Formato: DATASET RECETA CAPAS SEMILLA.
-# Se ejecuta en trozos: `sbatch batch_template.slurm runs/chaksu_prose_v1_grid.txt PRIMERA CANTIDAD`.
-# La tabla se construye con `python -m scripts.results runs/chaksu_prose_v1_grid.txt`.
+# Se ejecuta en trozos: cada línea es un entrenamiento (`python -m scripts.model.lora train`) seguido de su evaluación sobre validación (`generate`), lanzados como trabajos de SLURM de varias líneas.
+# La tabla se construye con `python -m scripts.eval.results runs/chaksu_prose_v1_grid.txt`.
 chaksu prose_v1 all-linear 42
 chaksu prose_v1 all-linear 43
 chaksu prose_v1 all-linear 44

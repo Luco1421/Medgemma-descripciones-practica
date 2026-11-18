@@ -7,11 +7,11 @@ Escribe `data/targets/mmodir129__external.csv` (una fila por imagen: imagen, tra
 grado de CDR anotado y vCDR de las máscaras cuando existen) y `data/splits/mmodir129_externa.csv` (todas en la partición `external`).
 No elige referencia: qué se compara con qué (etiqueta, cociente escrito en la transcripción o máscaras) se decide al evaluar, con las
 predicciones ya guardadas. Con estos archivos y los prompts de Chákṣu, `lora.py generate --split external` produce las predicciones de
-cualquier adaptador o del modelo base; `slurm/external_template.slurm` recorre las listas de corridas del Test.
+cualquier adaptador o del modelo base; las listas de corridas del Test se generan con `scripts.analysis.finalists`.
 
 `stage2` toma las predicciones externas del adaptador `all-linear` de A (tres semillas y los tres controles de imagen) y escribe, en
 `data/stage2/`, una copia de los targets en la que `vcdr`, `hcdr` y `decision` son los campos PREDICHOS (los que entran en el prompt de la
-etapa 2) y, en `runs/mmodir129_C_etapa2.txt`, la lista de generaciones para `slurm/pipeline_template.slurm` (con SPLITS y SPLIT de MM-ODIR-129).
+etapa 2) y, en `runs/mmodir129_C_etapa2.txt`, la lista de generaciones de la etapa 2 (con las particiones de MM-ODIR-129).
 Aborta si alguna predicción de la etapa 1 no trae los tres campos válidos: la etapa 2 no tendría entrada.
 """
 
